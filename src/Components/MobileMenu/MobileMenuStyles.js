@@ -11,6 +11,7 @@ export const StyledWrapper = styled.div`
   top: 0px;
   justify-content: space-between;
   align-items: center;
+  z-index: 1000;
 `;
 export const StyledDiv = styled.div`
   height: 50px;

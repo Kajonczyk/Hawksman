@@ -69,6 +69,7 @@ export const StyledLogoDescription = styled(StyledNavBarItem)`
 export const StyledHeading = styled.h1`
   font-family: ${({ theme }) => theme.font.family.Playfair};
   font-size: ${({ theme }) => theme.font.size.m};
-  padding: 80px 0px 0px 25px;
+  padding: 60px 0px 20px 25px;
   font-weight: lighter;
+  line-height: 110%;
 `;

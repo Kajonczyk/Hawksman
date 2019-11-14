@@ -10,6 +10,7 @@ import {
   StyledLogoDescription,
   StyledHeading
 } from "./HomePageStyles";
+import { VerticalSlider } from "../Components/VerticalSlider/VerticalSlider";
 
 class HomePage extends Component {
   state = {
@@ -39,6 +40,7 @@ class HomePage extends Component {
         {this.state.isMobileMenuExpanded && (
           <MobileMenu isMobileMenuExpanded={this.state.isMobileMenuExpanded} />
         )}
+        <VerticalSlider />
       </StyledWrapper>
     );
   }
