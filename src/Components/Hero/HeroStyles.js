@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import bg_hero from "../Images/Hero/bg_hero.jpg";
-import logo_hawksman from "../Images/Hero/logo_hawksman.png";
+import bg_hero from "../../Images/Hero/bg_hero.jpg";
+import logo_hawksman from "../../Images/Hero/logo_hawksman.png";
 
 export const StyledWrapper = styled.section`
   background-image: url(${bg_hero});
@@ -76,7 +76,7 @@ export const StyledParagraph = styled.p`
   color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
   text-transform: uppercase;
   text-align: center;
-  margin: 70px 0px 20px 0px;
+  margin: 20px 0px 20px 0px;
   ${({ grey }) =>
     grey &&
     `

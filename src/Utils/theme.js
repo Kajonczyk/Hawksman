@@ -11,6 +11,7 @@ export const theme = {
     },
     family: {
       Noto: "'Noto Sans', sans-serif;",
+      NotoSerif: "'Noto Serif', serif;",
       Playfair: "'Playfair Display', serif;"
     }
   },
