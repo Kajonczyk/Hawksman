@@ -4,13 +4,20 @@ import {
   StyledDiv,
   StyledListItemLink,
   StyledUl,
-  StyledListItem
+  StyledListItem,
+  StyledFacebook,
+  StyledInstagram,
+  StyledLinkedin,
+  StyledSnapchat,
+  StyledPinterestAlt,
+  StyledTwitter,
+  StyledPeriscope
 } from "./MobileMenuStyles";
 export const MobileMenu = ({ isMobileMenuExpanded }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper active={isMobileMenuExpanded}>
       <span></span>
-      <StyledUl active={isMobileMenuExpanded}>
+      <StyledUl>
         <StyledListItem>
           <StyledListItemLink href="#">Home</StyledListItemLink>
         </StyledListItem>
@@ -24,7 +31,15 @@ export const MobileMenu = ({ isMobileMenuExpanded }) => {
           <StyledListItemLink href="#">Contact</StyledListItemLink>
         </StyledListItem>
       </StyledUl>
-      <StyledDiv></StyledDiv>
+      <StyledDiv>
+        <StyledFacebook />
+        <StyledInstagram />
+        <StyledLinkedin />
+        <StyledPeriscope />
+        <StyledPinterestAlt />
+        <StyledSnapchat />
+        <StyledTwitter />
+      </StyledDiv>
     </StyledWrapper>
   );
 };

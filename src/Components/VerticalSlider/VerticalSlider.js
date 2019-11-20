@@ -1,5 +1,5 @@
-import Swiper from "react-id-swiper";
 import React, { Component } from "react";
+import Swiper from "swiper";
 import {
   SwiperWrapper,
   SwiperItem,
@@ -7,75 +7,95 @@ import {
   SwiperNavigationNumbers,
   SwiperSlideIndicatorWrapper,
   SwiperSlideIndicator,
-  Wrapper
+  Wrapper,
+  SwiperArrowUp,
+  SwiperArrowDown,
+  StyledP,
+  SwiperItemWrapper
 } from "./VerticalSliderStyles";
 
 export class VerticalSlider extends Component {
   state = {
-    activeSlideId: 0
+    activeSlide: 0
   };
-  componentDidMount() {
-    setTimeout(this.handleGetCurrentSlide, 100);
-  }
 
-  handleGetCurrentSlide = () => {
-    const sliderItems = [...document.querySelectorAll(".swiper-slide")];
-    const slideIndex = sliderItems.findIndex(item =>
-      item.classList.contains("swiper-slide-active")
-    );
+  updateSlideIndex = index => {
     this.setState({
-      activeSlideId: slideIndex + 1
+      activeSlide: index
     });
   };
-  params = {
-    direction: "vertical",
-    on: {
-      slideChange: () => {
-        setTimeout(this.handleGetCurrentSlide, 100);
-      }
-    }
-  };
+  swiperSetup = () => {
+    const swiperWrapper = this.swiperWrapper
+      .getAttribute("class")
+      .split(" ")[2];
 
+    const swiper = new Swiper(`.${swiperWrapper}`, {
+      direction: "vertical",
+      height: 300,
+      on: {
+        slideChange: () => {
+          this.updateSlideIndex(swiper.activeIndex);
+        }
+      }
+    });
+  };
+  componentDidMount() {
+    this.swiperSetup();
+  }
   render() {
-    const { activeSlideId } = this.state;
     return (
-      <Wrapper>
-        <SwiperNavigationWrapper>
-          <SwiperNavigationNumbers index={activeSlideId}>
+      <Wrapper className="swiper-container" ref={r => (this.swiperWrapper = r)}>
+        <SwiperNavigationWrapper className="swiper-pagination">
+          <SwiperNavigationNumbers index={this.state.activeSlide + 1}>
             01
           </SwiperNavigationNumbers>
-          <SwiperNavigationNumbers index={activeSlideId}>
+          <SwiperNavigationNumbers index={this.state.activeSlide + 1}>
             02
           </SwiperNavigationNumbers>
-          <SwiperNavigationNumbers index={activeSlideId}>
+          <SwiperNavigationNumbers index={this.state.activeSlide + 1}>
             03
           </SwiperNavigationNumbers>
         </SwiperNavigationWrapper>
         <SwiperSlideIndicatorWrapper>
-          <SwiperSlideIndicator index={activeSlideId} />
+          <SwiperSlideIndicator index={this.state.activeSlide + 1} />
+          <SwiperArrowUp className="swiper-button-prev" />
+          <SwiperArrowDown className="swiper-button-next" />
         </SwiperSlideIndicatorWrapper>
-        <SwiperWrapper>
-          <Swiper {...this.params}>
+        <SwiperWrapper className="swiper-wrapper">
+          <SwiperItemWrapper
+            className="swiper-slide"
+            index={this.state.activeSlide + 1}
+          >
             <SwiperItem>
-              <p>
+              <StyledP>
                 to offer a truly personal service when buying or selling your
                 home, from start to finish
-              </p>
+              </StyledP>
             </SwiperItem>
+          </SwiperItemWrapper>
+          <SwiperItemWrapper
+            className="swiper-slide"
+            index={this.state.activeSlide + 1}
+          >
             <SwiperItem>
-              <p>
+              <StyledP>
                 to create a partnership with you
                 <br />
                 in order to achieve the best results
-              </p>
+              </StyledP>
             </SwiperItem>
+          </SwiperItemWrapper>
+          <SwiperItemWrapper
+            className="swiper-slide"
+            index={this.state.activeSlide + 1}
+          >
             <SwiperItem>
-              <p>
+              <StyledP>
                 to make your move as seamless <br />
                 and stress free as possible
-              </p>
+              </StyledP>
             </SwiperItem>
-          </Swiper>
+          </SwiperItemWrapper>
         </SwiperWrapper>
       </Wrapper>
     );
