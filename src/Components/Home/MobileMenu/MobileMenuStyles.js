@@ -11,7 +11,6 @@ const iconSize = "20px";
 const iconColor = "#3c404a";
 export const StyledFacebook = styled(Facebook)`
   height: ${iconSize};
-
   color: ${iconColor};
 `;
 export const StyledInstagram = styled(Instagram)`

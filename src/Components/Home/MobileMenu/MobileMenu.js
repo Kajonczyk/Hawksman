@@ -16,7 +16,7 @@ import {
 export const MobileMenu = ({ isMobileMenuExpanded }) => {
   return (
     <StyledWrapper active={isMobileMenuExpanded}>
-      <span></span>
+      <div></div>
       <StyledUl>
         <StyledListItem>
           <StyledListItemLink href="#">Home</StyledListItemLink>

@@ -25,11 +25,7 @@ export class VerticalSlider extends Component {
     });
   };
   swiperSetup = () => {
-    const swiperWrapper = this.swiperWrapper
-      .getAttribute("class")
-      .split(" ")[2];
-
-    const swiper = new Swiper(`.${swiperWrapper}`, {
+    const swiper = new Swiper(`.vertical-wrapper`, {
       direction: "vertical",
       height: 300,
       on: {
@@ -44,7 +40,7 @@ export class VerticalSlider extends Component {
   }
   render() {
     return (
-      <Wrapper className="swiper-container" ref={r => (this.swiperWrapper = r)}>
+      <Wrapper className="swiper-container vertical-wrapper">
         <SwiperNavigationWrapper className="swiper-pagination">
           <SwiperNavigationNumbers index={this.state.activeSlide + 1}>
             01
