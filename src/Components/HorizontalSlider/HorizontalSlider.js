@@ -9,19 +9,38 @@ import {
   StyledItemDescription,
   StyledDecoratedText,
   StyledLocalisationText,
-  StyledSeparator
+  StyledSeparator,
+  StyledPaginationWrapper,
+  StyledPaginationLine,
+  StyledPaginationIndicator,
+  StyledPagination
 } from "./HorizontalSliderStyles";
 
 import { propertiesData } from "../propertiesData";
 import { StyledButton } from "../../Shared/StyledButton";
 export class HorizontalSlider extends Component {
-  state = {};
+  state = {
+    activeSlide: 1
+  };
+
+  updateSlideIndex = index => {
+    this.setState({
+      activeSlide: index + 1
+    });
+  };
 
   initializeSwiper = () => {
     const swiper = new Swiper(`.horizontal-wrapper`, {
-      direction: "horizontal"
+      direction: "horizontal",
+      on: {
+        slideChange: () => {
+          console.log(swiper.activeIndex);
+          this.updateSlideIndex(swiper.activeIndex);
+        }
+      }
     });
   };
+
   componentDidMount() {
     this.initializeSwiper();
   }
@@ -29,6 +48,17 @@ export class HorizontalSlider extends Component {
   render() {
     return (
       <SwiperWrapper className="swiper-container horizontal-wrapper">
+        <StyledPaginationWrapper
+          className="swiper-pagination"
+          ref={d => (this.paginationWidth = d)}
+        >
+          <StyledPagination>
+            {propertiesData.map(item => (
+              <StyledPaginationLine></StyledPaginationLine>
+            ))}
+            <StyledPaginationIndicator index={this.state.activeSlide} />
+          </StyledPagination>
+        </StyledPaginationWrapper>
         <ItemWrapper className="swiper-wrapper">
           {propertiesData.map(item => (
             <SwiperItem className="swiper-slide" key={item.id}>
@@ -51,7 +81,6 @@ export class HorizontalSlider extends Component {
             </SwiperItem>
           ))}
         </ItemWrapper>
-        <div className="swiper-pagination"></div>
       </SwiperWrapper>
     );
   }
