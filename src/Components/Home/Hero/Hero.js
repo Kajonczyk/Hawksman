@@ -11,9 +11,8 @@ import {
   StyledParagraph,
   StyledSecondHeading
 } from "./HeroStyles";
-import { VerticalSlider } from "../VerticalSlider/VerticalSlider";
+import { VerticalSlider } from "../../VerticalSlider/VerticalSlider";
 import { MobileMenu } from "../MobileMenu/MobileMenu";
-
 export class Hero extends Component {
   state = {
     isMobileMenuExpanded: false
@@ -25,7 +24,7 @@ export class Hero extends Component {
   };
   render() {
     return (
-      <StyledWrapper>
+      <StyledWrapper fixed={this.state.isMobileMenuExpanded}>
         <StyledNavBar>
           <StyledMenuWrapper onClick={this.handleUpdateMobileMenuExpansion}>
             <StyledHamburgerMenu active={this.state.isMobileMenuExpanded} />

@@ -1,15 +1,16 @@
 import styled from "styled-components";
-import bg_hero from "../../Images/Hero/bg_hero.jpg";
-import logo_hawksman from "../../Images/Hero/logo_hawksman.png";
+import bg_hero from "../../../Images/Hero/bg_hero.jpg";
+import logo_hawksman from "../../../Images/Hero/logo_hawksman.png";
 
 export const StyledWrapper = styled.section`
   background-image: url(${bg_hero});
   background-position: center top;
   background-size: cover;
   color: white;
-  position: relative;
+  position: ${({ fixed }) => (fixed ? "fixed" : "relative")};
   overflow: hidden;
   min-height: 100vh;
+  width: 100%;
 `;
 export const StyledNavBar = styled.nav`
   display: flex;
@@ -37,7 +38,6 @@ export const StyledHamburgerMenu = styled.p`
   height: 2px;
   background-color: ${({ active }) => (active ? "grey" : "white")};
   z-index: 9999;
-
   &::before,
   &::after {
     content: "";
