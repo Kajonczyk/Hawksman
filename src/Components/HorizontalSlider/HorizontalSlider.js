@@ -34,7 +34,6 @@ export class HorizontalSlider extends Component {
       direction: "horizontal",
       on: {
         slideChange: () => {
-          console.log(swiper.activeIndex);
           this.updateSlideIndex(swiper.activeIndex);
         }
       }

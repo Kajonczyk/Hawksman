@@ -35,14 +35,14 @@ export const StyledItemDescription = styled.div`
     content: "";
     height:1px;
     width:40px;
-    background-color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+    background-color: ${({ theme }) => theme.decoratedText};
     position:absolute;
     bottom:2px;
     right: 10px;
   }
 `;
 export const StyledDecoratedText = styled.p`
-  color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+  color: ${({ theme }) => theme.decoratedText};
   font-size: calc(
     ${({ theme }) => theme.font.size.mobileSwiperItemDescription}
   );
@@ -99,7 +99,7 @@ export const StyledPaginationIndicator = styled.div`
   left: 0px;
   transform: translate(${({ index }) => setIndicatorPosition(index)}, 0);
   height: 35px;
-  background-color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+  background-color: ${({ theme }) => theme.decoratedText};
   z-index: 2;
   transition: transform 0.2s;
   &::before {
@@ -112,7 +112,7 @@ export const StyledPaginationIndicator = styled.div`
     padding: 2px;
     border: 2px solid;
     transform: rotate(45deg);
-    border-color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+    border-color: ${({ theme }) => theme.decoratedText};
   }
 `;
 export const StyledPagination = styled.div`

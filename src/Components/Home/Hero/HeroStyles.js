@@ -73,7 +73,7 @@ export const StyledLogoDescription = styled(StyledNavBarItem)`
   color: ${({ theme }) => theme.logoDescription};
 `;
 export const StyledParagraph = styled.p`
-  color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+  color: ${({ theme }) => theme.decoratedText};
   text-transform: uppercase;
   text-align: center;
   margin: 20px 0px 20px 0px;

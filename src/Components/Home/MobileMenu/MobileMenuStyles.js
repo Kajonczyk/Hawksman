@@ -49,7 +49,7 @@ export const StyledWrapper = styled.div`
   top: 0px;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
+  z-index: 9000;
   transition: height 0.2s, opacity 0s;
   overflow: hidden;
 `;
@@ -66,7 +66,7 @@ export const StyledListItem = styled.li`
   text-align: center;
 `;
 export const StyledListItemLink = styled.a`
-  color: ${({ theme }) => theme.mobileMenuListItemsColor};
+  color: ${({ theme }) => theme.greyColor};
   text-decoration: none;
   font-size: ${({ theme }) => theme.font.size.m};
 `;
