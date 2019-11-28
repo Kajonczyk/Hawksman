@@ -17,7 +17,7 @@ export const SwiperItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+  color: ${({ theme }) => theme.decoratedText};
   font-size: ${({ theme }) => theme.font.size.mobileSwiperItemDescription};
 `;
 
@@ -47,7 +47,7 @@ export const SwiperNavigationNumbers = styled.li`
     ${({ theme }) => theme.font.size.mobileSwiperItemDescription} / 1.2
   );
   &:nth-child(${({ index }) => index}) {
-    color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+    color: ${({ theme }) => theme.decoratedText};
   }
   transition: color 0.4s;
 `;
@@ -74,7 +74,7 @@ const setIndicatorPosition = index => {
 export const SwiperSlideIndicator = styled.span`
   height: calc(160px / 3);
   width: 1px;
-  background-color: ${({ theme }) => theme.swiperSlidesDecritpionColor};
+  background-color: ${({ theme }) => theme.decoratedText};
   display: block;
   transform: translateY(${({ index }) => setIndicatorPosition(index)});
   transition: transform 0.2s;
