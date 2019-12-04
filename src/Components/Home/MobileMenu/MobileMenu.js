@@ -1,18 +1,11 @@
 import React from "react";
 import {
   StyledWrapper,
-  StyledDiv,
   StyledListItemLink,
   StyledUl,
-  StyledListItem,
-  StyledFacebook,
-  StyledInstagram,
-  StyledLinkedin,
-  StyledSnapchat,
-  StyledPinterestAlt,
-  StyledTwitter,
-  StyledPeriscope
+  StyledListItem
 } from "./MobileMenuStyles";
+import { StyledSocials } from "../../../Shared/Socials/StyledSocials";
 export const MobileMenu = ({ isMobileMenuExpanded }) => {
   return (
     <StyledWrapper active={isMobileMenuExpanded}>
@@ -31,15 +24,8 @@ export const MobileMenu = ({ isMobileMenuExpanded }) => {
           <StyledListItemLink href="#">Contact</StyledListItemLink>
         </StyledListItem>
       </StyledUl>
-      <StyledDiv>
-        <StyledFacebook />
-        <StyledInstagram />
-        <StyledLinkedin />
-        <StyledPeriscope />
-        <StyledPinterestAlt />
-        <StyledSnapchat />
-        <StyledTwitter />
-      </StyledDiv>
+
+      <StyledSocials />
     </StyledWrapper>
   );
 };

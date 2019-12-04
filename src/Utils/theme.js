@@ -10,7 +10,8 @@ export const theme = {
       l: "2.3rem",
       mobileSwiperItemDescription: "1.1rem",
       headingSectionNumber: ".7rem",
-      decoratedTextSize: "1rem"
+      decoratedTextSize: "1rem",
+      footerSize: ".7rem"
     },
     family: {
       Noto: "'Noto Sans', sans-serif;",

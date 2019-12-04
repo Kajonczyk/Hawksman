@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import bg_hero from "../../../Images/Hero/bg_hero.jpg";
-import logo_hawksman from "../../../Images/Hero/logo_hawksman.png";
 
 export const StyledWrapper = styled.section`
   background-image: url(${bg_hero});
@@ -53,22 +52,7 @@ export const StyledHamburgerMenu = styled.p`
     top: -1px;
   }
 `;
-export const StyledLogo = styled.div`
-  height: 110px;
-  width: 150px;
-  background-image: url(${logo_hawksman});
-  background-size: 75%;
-  margin: 0px auto;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  z-index: 9999;
-  transform: translateY(${({ active }) => (active ? "-25px" : "0px")});
-  transition: transform 0.3s;
-`;
+
 export const StyledLogoDescription = styled(StyledNavBarItem)`
   color: ${({ theme }) => theme.logoDescription};
 `;

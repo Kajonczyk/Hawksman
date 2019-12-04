@@ -4,13 +4,13 @@ import {
   StyledNavBar,
   StyledNavBarItem,
   StyledMenuWrapper,
-  StyledLogo,
   StyledLogoDescription,
   StyledHamburgerMenu,
   StyledHeading,
   StyledParagraph,
   StyledSecondHeading
 } from "./HeroStyles";
+import { StyledLogo } from "../../../Shared/StyledLogo";
 import { VerticalSlider } from "../../VerticalSlider/VerticalSlider";
 import { MobileMenu } from "../MobileMenu/MobileMenu";
 export class Hero extends Component {
