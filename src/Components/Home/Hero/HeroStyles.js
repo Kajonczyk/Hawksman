@@ -6,15 +6,10 @@ export const StyledWrapper = styled.section`
   background-position: center top;
   background-size: cover;
   color: white;
-  position: ${({ fixed }) => (fixed ? "fixed" : "relative")};
-  overflow: hidden;
+  // position: ${({ fixed }) => (fixed ? "fixed" : "relative")};
+  // overflow: hidden;
   min-height: 100vh;
   width: 100%;
-`;
-export const StyledNavBar = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  padding: 23px;
 `;
 export const StyledNavBarItem = styled.p`
   font-family: ${({ theme }) => theme.font.family.Noto};
@@ -23,34 +18,6 @@ export const StyledNavBarItem = styled.p`
   text-transform: uppercase;
   transform: translateX(${({ active }) => (active ? "400px" : "0px")});
   transition: transform 0.2s;
-`;
-export const StyledMenuWrapper = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9999;
-`;
-export const StyledHamburgerMenu = styled.p`
-  width: 22px;
-  height: 2px;
-  background-color: ${({ active }) => (active ? "grey" : "white")};
-  z-index: 9999;
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    background-color: ${({ active }) => (active ? "grey" : "white")};
-    height: 2px;
-    width: 22px;
-  }
-  &::after {
-    top: 13px;
-  }
-  &::before {
-    top: -1px;
-  }
 `;
 
 export const StyledLogoDescription = styled(StyledNavBarItem)`
