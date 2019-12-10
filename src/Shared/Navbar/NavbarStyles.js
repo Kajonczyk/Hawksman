@@ -10,13 +10,17 @@ export const StyledNavBar = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 23px;
+  background-color: ${({ activeScroll }) =>
+    activeScroll ? "white" : "transparent"};
+  transition: background-color 0.2s;
 `;
 export const StyledNavBarItem = styled.p`
   font-family: ${({ theme }) => theme.font.family.Noto};
   font-weight: bold;
-  color: white;
   text-transform: uppercase;
   transform: translateX(${({ active }) => (active ? "400px" : "0px")});
+  color: ${({ activeScroll, theme }) =>
+    activeScroll ? theme.greyColor : "white"}
   transition: transform 0.2s;
 `;
 
@@ -47,6 +51,14 @@ export const StyledHamburgerMenu = styled.p`
   &::before {
     top: -1px;
   }
+  ${({ activeScroll }) =>
+    activeScroll &&
+    `
+  background-color:#3c404a;
+  &::after,&::before{
+    background-color:#3c404a;
+  }
+  `}
 `;
 export const GlobalStyle = createGlobalStyle`
   body{

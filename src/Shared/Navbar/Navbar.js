@@ -16,12 +16,18 @@ export class Navbar extends Component {
         <NavbarContext.Consumer>
           {context => (
             <>
-              <StyledNavBar className="XD">
+              <StyledNavBar activeScroll={context.state.isPageScrolled}>
                 <StyledMenuWrapper onClick={() => context.toggleMenu()}>
-                  <StyledHamburgerMenu active={context.state.isMenuActive} />
+                  <StyledHamburgerMenu
+                    active={context.state.isMenuActive}
+                    activeScroll={context.state.isPageScrolled}
+                  />
                 </StyledMenuWrapper>
 
-                <StyledNavBarItem active={context.state.isMenuActive}>
+                <StyledNavBarItem
+                  active={context.state.isMenuActive}
+                  activeScroll={context.state.isPageScrolled}
+                >
                   Contact
                 </StyledNavBarItem>
               </StyledNavBar>

@@ -9,8 +9,7 @@ import { StyledSocials } from "../../../Shared/Socials/StyledSocials";
 export const MobileMenu = ({ isMobileMenuExpanded }) => {
   return (
     <>
-      <StyledWrapper active={isMobileMenuExpanded} className="TUTAJ">
-        {console.log(isMobileMenuExpanded)}
+      <StyledWrapper active={isMobileMenuExpanded}>
         <div></div>
         <StyledUl>
           <StyledListItem>
