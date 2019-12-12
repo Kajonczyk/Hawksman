@@ -8,13 +8,22 @@ export const StyledLogo = styled.div`
   margin: 0px auto;
   background-repeat: no-repeat;
   background-position: center;
-  position: relative;
+  position: ${({ active }) => (active ? "fixed" : "relative")};
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  z-index: 9999;
+  z-index: 2000;
   transform: translateY(${({ active }) => (active ? "-25px" : "0px")})
     scale(${({ footer }) => (footer ? "0.85" : "1")});
   transition: transform 0.3s;
   margin: ${({ footer }) => (footer ? "30px 0px" : "0px auto")};
+  ${({ active }) =>
+    active &&
+    `
+left:50%;
+transform:translate(-50%,0%);
+z-index: 9999;
+transition: transform 0.3s;
+`}
 `;
