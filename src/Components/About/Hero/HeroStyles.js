@@ -5,7 +5,7 @@ import { StyledParagraph } from "../../../Shared/StyledParagraph";
 import { StyledSectionIndicator } from "../../../Shared/StyledSectionIndicator";
 
 export const StyledWrapper = styled.div`
-  background: #3c404a;
+  background: ${({ theme }) => theme.greyColor};
   background-image: url(${heroImage});
   background-position: center top;
   background-size: 100%;
