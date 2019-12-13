@@ -6,7 +6,7 @@ export const theme = {
   font: {
     size: {
       s: "1.3rem",
-      m: "1.7rem",
+      m: "1.6rem",
       l: "2.3rem",
       mobileSwiperItemDescription: "1.1rem",
       headingSectionNumber: ".7rem",
