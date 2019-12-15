@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { StyledDecoratedText } from "../../../Shared/StyledDecoratedText";
 
+import { Phone } from "styled-icons/feather/Phone";
+import { Mail } from "styled-icons/feather/Mail";
 export const StyledWrapper = styled.div`
   min-height: 300px;
   background-color: ${({ theme }) => theme.greyColor};
@@ -30,13 +32,24 @@ export const StyledPortaitInfo = styled.div`
   left: 0%;
   bottom: 0%;
   background-color: ${({ theme }) => theme.greyColor};
-  height: 60px;
+  height: 70px;
   width: 140px;
   text-align: right;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  &::before {
+    content: "";
+    height: 3px;
+    width: 50px;
+    position: absolute;
+    left: 50%;
+    bottom: 1.5px;
+    transform: translate(-50%, -0%);
+
+    background-color: ${({ theme }) => theme.decoratedText};
+  }
 `;
 export const PersonInfo = styled.p`
   color: white;
@@ -45,7 +58,33 @@ export const PersonInfo = styled.p`
   ${({ role }) =>
     role &&
     `
-    font-size: 1rem;
+    font-size: 0.9rem;
   opacity:0.5;
   `}
+`;
+export const StyledDataWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  margin-top: 20px;
+`;
+export const StyledIconWrapper = styled.div`
+  display: flex;
+  padding: 5px 0px;
+`;
+export const StyledPhoneIcon = styled(Phone)`
+  height: 25px;
+  width: 25px;
+  color: white;
+`;
+export const StyledMailIcon = styled(Mail)`
+  height: 25px;
+  width: 25px;
+  color: white;
+`;
+export const StyledIconText = styled(StyledDecoratedText)`
+  font-size: 0.7rem;
+  padding-top: 3px;
 `;

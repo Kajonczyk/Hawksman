@@ -5,9 +5,15 @@ import {
   StyledPortrait,
   StyledImg,
   StyledPortaitInfo,
-  PersonInfo
+  PersonInfo,
+  StyledDataWrapper,
+  StyledPhoneIcon,
+  StyledIconWrapper,
+  StyledIconText,
+  StyledMailIcon
 } from "./FirstSectionStyles";
 import { StyledHeading } from "../../../Shared/StyledHeading";
+
 import portraitJames from "../../../Images/About/portraitJames.png";
 
 export const FirstSection = () => {
@@ -29,6 +35,16 @@ export const FirstSection = () => {
           <PersonInfo role>Founder</PersonInfo>
         </StyledPortaitInfo>
       </StyledPortrait>
+      <StyledDataWrapper>
+        <StyledIconWrapper>
+          <StyledPhoneIcon />
+          <StyledIconText> 0000 4123</StyledIconText>
+        </StyledIconWrapper>
+        <StyledIconWrapper>
+          <StyledMailIcon />
+          <StyledIconText> somemail@some.com</StyledIconText>
+        </StyledIconWrapper>
+      </StyledDataWrapper>
     </StyledWrapper>
   );
 };
