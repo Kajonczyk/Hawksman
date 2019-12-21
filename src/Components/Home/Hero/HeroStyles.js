@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import bg_hero from "../../../Images/Hero/bg_hero.jpg";
-
 export const StyledWrapper = styled.section`
   background-image: url(${bg_hero});
   background-position: center top;
@@ -22,22 +21,6 @@ export const StyledNavBarItem = styled.p`
 
 export const StyledLogoDescription = styled(StyledNavBarItem)`
   color: ${({ theme }) => theme.logoDescription};
-`;
-export const StyledParagraph = styled.p`
-  color: ${({ theme }) => theme.decoratedText};
-  text-transform: uppercase;
-  text-align: center;
-  margin: 20px 0px 20px 0px;
-  ${({ grey }) =>
-    grey &&
-    `
-  margin:20px 0px 40px 0px;
-  color: #858994;
-  padding:0px 20px;
-  font-family: 'Noto Serif', serif;
-  text-transform: none;
-  font-size: .8rem;
-  `}
 `;
 
 export const StyledHeading = styled.h1`

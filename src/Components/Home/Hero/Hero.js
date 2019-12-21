@@ -3,26 +3,18 @@ import {
   StyledWrapper,
   StyledLogoDescription,
   StyledHeading,
-  StyledParagraph,
   StyledSecondHeading
 } from "./HeroStyles";
 import { StyledLogo } from "../../../Shared/StyledLogo";
 import { VerticalSlider } from "../../VerticalSlider/VerticalSlider";
 import { NavbarContext } from "../../../Shared/NavbarContext";
+import { StyledParagraph } from "../../../Shared/StyledParagraph";
 
 export class Hero extends Component {
-  state = {
-    isMobileMenuExpanded: false
-  };
-  handleUpdateMobileMenuExpansion = () => {
-    this.setState(prevState => ({
-      isMobileMenuExpanded: !prevState.isMobileMenuExpanded
-    }));
-  };
   render() {
     return (
       <>
-        <StyledWrapper fixed={this.state.isMobileMenuExpanded}>
+        <StyledWrapper>
           <NavbarContext.Consumer>
             {context => (
               <StyledLogo active={context.state.isMenuActive}>
@@ -38,7 +30,6 @@ export class Hero extends Component {
           <VerticalSlider />
           <StyledParagraph> A new kind of real estate agent </StyledParagraph>
           <StyledSecondHeading>
-            {" "}
             Integrity. Service. Results.
           </StyledSecondHeading>
           <StyledParagraph grey>

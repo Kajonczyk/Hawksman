@@ -5,8 +5,9 @@ export const theme = {
   sectionDarkerWhite: "#f1efed",
   font: {
     size: {
+      xs: "0.9rem",
       s: "1.3rem",
-      m: "1.7rem",
+      m: "1.6rem",
       l: "2.3rem",
       mobileSwiperItemDescription: "1.1rem",
       headingSectionNumber: ".7rem",

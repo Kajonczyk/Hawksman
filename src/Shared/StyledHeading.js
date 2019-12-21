@@ -8,7 +8,7 @@ export const StyledHeading = styled.h2`
     padding: 60px 20px 50px;
     position:relative;
     ::before{
-        content: "02";
+        content: '${({ sectionNumber }) => sectionNumber}';
         position:absolute;
         left:20px;
         top: 45px;
