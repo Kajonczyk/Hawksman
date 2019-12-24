@@ -1,19 +1,16 @@
 import React, { Component } from "react";
-import {
-  StyledWrapper,
-  StyledParagraph,
-  StyledSectionDivider,
-  StyledDividerWrapper,
-  StyledDecoratedButton
-} from "./SecondSectionStyles";
+import { StyledWrapper, StyledParagraph } from "./SecondSectionStyles";
 import { StyledHeading } from "../../../Shared/StyledHeading";
-import { StyledSectionIndicator } from "../../../Shared/StyledSectionIndicator";
 import { StyledDecoratedText } from "../../../Shared/StyledDecoratedText";
+import { StyledFeatures } from "../../../Shared/StyledFeatures";
 export class SecondSection extends Component {
   render() {
     return (
       <StyledWrapper>
-        <StyledHeading color={({ theme }) => theme.greyColor}>
+        <StyledHeading
+          color={({ theme }) => theme.greyColor}
+          sectionNumber="02"
+        >
           How we do things <br />
           Differently
         </StyledHeading>
@@ -33,21 +30,7 @@ export class SecondSection extends Component {
           No mixed messages, no going back on our advice,no game playing. Clear,
           concise, honest guidance.
         </StyledParagraph>
-        <StyledSectionDivider>
-          <StyledDividerWrapper>
-            <StyledDecoratedText>
-              See all of our handpicked <br /> properties
-            </StyledDecoratedText>
-            <StyledDecoratedButton>View Portfolio</StyledDecoratedButton>
-          </StyledDividerWrapper>
-          <StyledSectionIndicator />
-          <StyledDividerWrapper>
-            <StyledDecoratedText>
-              Interested in putting your <br /> property for sale?
-            </StyledDecoratedText>
-            <StyledDecoratedButton>Contact us</StyledDecoratedButton>
-          </StyledDividerWrapper>
-        </StyledSectionDivider>
+        <StyledFeatures />
       </StyledWrapper>
     );
   }

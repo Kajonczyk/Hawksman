@@ -26,7 +26,7 @@ export class VerticalSlider extends Component {
   };
   swiperSetup = () => {
     const swiper = new Swiper(`.vertical-wrapper`, {
-      direction: "vertical",
+      direction: "horizontal",
       height: 300,
       on: {
         slideChange: () => {

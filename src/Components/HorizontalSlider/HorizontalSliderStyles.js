@@ -6,6 +6,7 @@ export const SwiperWrapper = styled.div`
   width: 100%;
   position: relative;
   z-index: 1;
+  margin-top: 50px;
 `;
 export const ItemWrapper = styled.div`
   display: flex;
