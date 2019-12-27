@@ -31,7 +31,10 @@ export class Navbar extends Component {
                   Contact
                 </StyledNavBarItem>
               </StyledNavBar>
-              <MobileMenu isMobileMenuExpanded={context.state.isMenuActive} />
+              <MobileMenu
+                isMobileMenuExpanded={context.state.isMenuActive}
+                toggleMenu={context.toggleMenu}
+              />
             </>
           )}
         </NavbarContext.Consumer>
