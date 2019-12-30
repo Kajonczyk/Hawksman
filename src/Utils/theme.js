@@ -3,6 +3,8 @@ export const theme = {
   greyColor: "#3c404a",
   decoratedText: "#d7a27e",
   sectionDarkerWhite: "#f1efed",
+  darkerGreyColor: "#343841",
+  lighterGreyColor: "#858994",
   font: {
     size: {
       xs: "0.9rem",

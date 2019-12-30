@@ -8,7 +8,7 @@ export const propertiesData = [
   {
     id: 1,
     img: property1,
-    price: "£1,195,000",
+    price: "1.195.000",
     description: "5 bedroom detached house The Glade, Fetcham",
     localisation: "The Glade, Fetcham, Fetcham",
     sqFeet: "2875 sq.ft"
@@ -16,15 +16,15 @@ export const propertiesData = [
   {
     id: 2,
     img: property2,
-    price: "£1,445,000",
+    price: "1.445.000",
     description: "Plot for sale in Esher",
-    localisation: "Pelhams Walk, Esher",
+    localisation: " Pelhams Walk, Esher ",
     sqFeet: "7300 sq.ft"
   },
   {
     id: 3,
     img: property3,
-    price: "£1,495,000",
+    price: "1.495.000",
     description: "Plot for sale in Esher",
     localisation: " Pelhams Walk, Esher ",
     sqFeet: "2875 sq.ft"
@@ -32,7 +32,7 @@ export const propertiesData = [
   {
     id: 4,
     img: property4,
-    price: "£1,100,000",
+    price: "1.100.000",
     description: "4 bedroom detached house",
     localisation: "Swan Close, Walton-on-Thames",
     sqFeet: "2330 sq.ft"
