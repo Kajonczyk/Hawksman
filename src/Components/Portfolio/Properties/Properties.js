@@ -1,13 +1,16 @@
 import React, { Component } from "react";
 import { propertiesData } from "../../propertiesData";
 import { StyledButton } from "../../../Shared/StyledButton";
+import { StyledFeatures } from "../../../Shared/StyledFeatures";
+
 import {
   StyledImgWrapper,
   StyledImg,
   StyledItemDescription,
   StyledDecoratedText,
   StyledSeparator,
-  StyledPropertyWrapper
+  StyledPropertyWrapper,
+  StyledDiv
 } from "./PropertiesStyles";
 export class Properties extends Component {
   state = {
@@ -27,6 +30,7 @@ export class Properties extends Component {
     }
     return null;
   }
+
   componentDidUpdate(prevProps) {
     const { sortOption, placeOption } = this.state;
 
@@ -37,9 +41,10 @@ export class Properties extends Component {
       this.filterPropertiesByPlace(placeOption);
       this.filterPropertiesWithSortOption(sortOption);
     }
+    return;
   }
 
-  setPropertiesData = array => {
+  setPropertiesData = (array = []) => {
     this.setState({
       properties: array
     });
@@ -69,6 +74,9 @@ export class Properties extends Component {
         this.setPropertiesData(propertiesData);
         break;
       }
+      default: {
+        return;
+      }
     }
   };
 
@@ -86,20 +94,6 @@ export class Properties extends Component {
         this.setPropertiesData(propertiesData);
         break;
       }
-      case "esher": {
-        const filteredProperties = propertiesData.filter(item =>
-          item.localisation.includes("Esher")
-        );
-        this.setPropertiesData(filteredProperties);
-        break;
-      }
-      case "fetcham": {
-        const filteredProperties = propertiesData.filter(item =>
-          item.localisation.includes("Fetcham")
-        );
-        this.setPropertiesData(filteredProperties);
-        break;
-      }
       case "walton-on-thames": {
         const filteredProperties = propertiesData.filter(item =>
           item.localisation.includes("Walton-on-Thames")
@@ -107,11 +101,23 @@ export class Properties extends Component {
         this.setPropertiesData(filteredProperties);
         break;
       }
+      case placeOption: {
+        const filteredProperties = propertiesData.filter(item =>
+          item.localisation.includes(
+            placeOption.charAt(0).toUpperCase() + placeOption.slice(1)
+          )
+        );
+        this.setPropertiesData(filteredProperties);
+        break;
+      }
+      default: {
+        break;
+      }
     }
   };
   render() {
     return (
-      <div>
+      <StyledDiv>
         <div>
           {this.state.properties.map(item => (
             <StyledPropertyWrapper key={item.id}>
@@ -123,7 +129,7 @@ export class Properties extends Component {
                   </StyledItemDescription>
                 </StyledImgWrapper>
                 <div>
-                  <StyledDecoratedText>{item.price}</StyledDecoratedText>
+                  <StyledDecoratedText>£{item.price}</StyledDecoratedText>
                   <StyledDecoratedText>
                     {item.localisation} <StyledSeparator>/</StyledSeparator>
                     {item.sqFeet}
@@ -134,7 +140,8 @@ export class Properties extends Component {
             </StyledPropertyWrapper>
           ))}
         </div>
-      </div>
+        <StyledFeatures />
+      </StyledDiv>
     );
   }
 }

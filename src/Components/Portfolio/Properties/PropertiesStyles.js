@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const StyledDiv = styled.div`
+  position: relative;
+  padding-bottom: 180px;
+`;
 export const StyledPropertyWrapper = styled.div`
   width: 90%;
   margin: 60px auto;
