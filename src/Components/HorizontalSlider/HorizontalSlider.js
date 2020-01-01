@@ -63,7 +63,7 @@ export class HorizontalSlider extends Component {
             <SwiperItem className="swiper-slide" key={item.id}>
               <div>
                 <StyledImgWrapper>
-                  <StyledImg src={item.img} alt="XD" />
+                  <StyledImg src={item.img} alt="img" />
                   <StyledItemDescription>
                     {item.description}
                   </StyledItemDescription>
@@ -71,7 +71,7 @@ export class HorizontalSlider extends Component {
                 <div>
                   <StyledDecoratedText>{item.price}</StyledDecoratedText>
                   <StyledLocalisationText>
-                    {item.localisation} <StyledSeparator>/</StyledSeparator>{" "}
+                    {item.localisation} <StyledSeparator>/</StyledSeparator>
                     {item.sqFeet}
                   </StyledLocalisationText>
                   <StyledButton>See Details</StyledButton>
