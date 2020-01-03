@@ -1,7 +1,8 @@
 import React from "react";
 import HomePage from "./Pages/HomePage/HomePage";
-import { AboutPage } from "./Pages/About/AboutPage";
+import { AboutPage } from "./Pages/AboutPage/AboutPage";
 import { PortfolioPage } from "./Pages/PortfolioPage/PortfolioPage";
+import { ContactPage } from "./Pages/ContactPage/ContactPage";
 import { GlobalStyle } from "./Utils/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./Utils/theme";
@@ -18,6 +19,7 @@ function App() {
               <Route path="/" exact component={HomePage} />
               <Route path="/about" exact component={AboutPage} />
               <Route path="/portfolio" exact component={PortfolioPage} />
+              <Route path="/contact" exact component={ContactPage} />
             </Switch>
             <GlobalStyle />
           </Router>

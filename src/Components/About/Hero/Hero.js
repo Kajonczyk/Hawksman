@@ -1,12 +1,12 @@
 import React from "react";
 import {
   StyledWrapper,
-  StyledSecondHeading,
   CustomLogo,
   LineBreak,
   CustomParagraph,
   CustomSectionIndicator
 } from "./HeroStyles";
+import { StyledSecondHeading } from "../../../Shared/StyledSecondHeading";
 
 export const Hero = () => {
   return (
