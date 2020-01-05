@@ -7,12 +7,16 @@ import {
   CustomSectionIndicator
 } from "./HeroStyles";
 import { StyledSecondHeading } from "../../../Shared/StyledSecondHeading";
+import { NavbarContext } from "../../../Shared/NavbarContext";
 
 export const Hero = () => {
   return (
     <StyledWrapper>
       <LineBreak height="60" />
-      <CustomLogo />
+      <NavbarContext.Consumer>
+        {context => <CustomLogo active={context.state.isMenuActive} />}
+      </NavbarContext.Consumer>
+
       <LineBreak height="30" />
       <StyledSecondHeading> Integrity. Service. Results.</StyledSecondHeading>
       <LineBreak height="20" />

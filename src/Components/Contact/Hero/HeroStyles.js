@@ -31,8 +31,11 @@ export const CustomSectionIndicator = styled(StyledSectionIndicator)`
   }
 `;
 export const CustomLogo = styled(StyledLogo)`
-  margin: 0px auto;
   margin-bottom: -60px;
   margin-top: -30px;
-  transform: scale(0.9);
+  ${({ active }) =>
+    active &&
+    `
+transform: translate(-50%,-50%);
+`}
 `;

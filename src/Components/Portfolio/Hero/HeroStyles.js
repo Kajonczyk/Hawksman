@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { KeyboardArrowDown } from "styled-icons/material/KeyboardArrowDown";
+import { StyledLogo } from "../../../Shared/StyledLogo";
+
 export const StyledWrapper = styled.div`
   height: 300px;
   background-color: ${({ theme }) => theme.greyColor};
@@ -31,5 +33,12 @@ export const StyledIcon = styled(KeyboardArrowDown)`
     `
     transform: rotateX(-180deg);
     
+  `}
+`;
+export const CustomLogo = styled(StyledLogo)`
+  ${({ active }) =>
+    active &&
+    `
+  transform: translate(-50%,-40%);
   `}
 `;

@@ -17,7 +17,11 @@ export const StyledWrapper = styled.div`
 `;
 export const CustomLogo = styled(StyledLogo)`
   margin: 0px auto;
-  transform: scale(0.9);
+  ${({ active }) =>
+    active &&
+    `
+  transform: translate(-50%, 50%);
+  `}
 `;
 export const LineBreak = styled.div`
   height: ${({ height }) => height}px;

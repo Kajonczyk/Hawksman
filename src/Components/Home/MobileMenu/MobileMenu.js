@@ -16,20 +16,27 @@ const menuItems = [
 const changeRoute = url => {
   history.push(url);
 };
+const isUrlExact = item => history.location.pathname == item.url;
+
 export const MobileMenu = ({ isMobileMenuExpanded, toggleMenu }) => {
+  let activeElement = false;
   return (
     <>
       <StyledWrapper active={isMobileMenuExpanded}>
         <div></div>
+
         <StyledUl>
           {menuItems.map(item => (
             <StyledListItem>
+              {(activeElement = isUrlExact(item))}
+
               <StyledListItemLink
                 href="#"
                 onClick={() => {
                   changeRoute(item.url);
                   toggleMenu();
                 }}
+                active={activeElement}
               >
                 {item.description}
               </StyledListItemLink>
