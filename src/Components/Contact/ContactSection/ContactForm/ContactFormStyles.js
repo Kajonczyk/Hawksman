@@ -1,6 +1,4 @@
 import styled from "styled-components";
-// import { Check } from "styled-icons/evil/Check";
-// import { Check } from "styled-icons/feather/Check";
 import { CheckCircle } from "styled-icons/feather/CheckCircle";
 export const StyledWrapper = styled.div`
   width: 100%;
@@ -12,7 +10,12 @@ export const StyledFormWrapper = styled.div`
   min-height: 400px;
   width: 100%;
   text-align: left;
-  padding: 20px 20px 100px 20px;
+  padding: 20px 20px 90px 20px;
+  ${({ theme }) => theme.mq.desktop} {
+    max-width: 1024px;
+    margin: 0px auto;
+    padding: 20px 40px 90px 40px;
+  }
 `;
 export const StyledInputField = styled.input`
   width: 100%;
@@ -21,8 +24,21 @@ export const StyledInputField = styled.input`
   border-bottom: 1px solid ${({ theme }) => theme.decoratedText};
   padding: 10px 20px;
   padding-left: 0px;
+  margin-bottom: 5px;
+  font-family: ${({ theme }) => theme.font.family.NotoSerif}
   &::placeholder {
     color: ${({ theme }) => theme.lighterGreyColor};
+  }
+  ${({ isNotValid }) =>
+    isNotValid &&
+    `
+  border-color: red;
+  border-width:2px;
+  `}
+  ${({ theme }) => theme.mq.tablet} {
+    &::placeholder {
+      font-size: 1.1rem;
+    }
   }
 `;
 export const StyledSpan = styled.span`
@@ -34,6 +50,9 @@ export const StyledSpan = styled.span`
   font-style:italic;
   margin-left:-5px;
   `}
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: 0.9rem;
+  }
 `;
 export const StyledTextArea = styled.textarea`
   width: 100%;
@@ -43,8 +62,20 @@ export const StyledTextArea = styled.textarea`
   padding: 10px 20px;
   padding-left: 0px;
   resize: none;
+  font-family: ${({ theme }) => theme.font.family.NotoSerif}
   &::placeholder {
     color: ${({ theme }) => theme.lighterGreyColor};
+  }
+  ${({ isNotValid }) =>
+    isNotValid &&
+    `
+border-color: red;
+border-width:2px;
+`}
+  ${({ theme }) => theme.mq.tablet} {
+    &::placeholder {
+      font-size: 1.1rem;
+    }
   }
 `;
 export const StyledInputWrapper = styled.div`
@@ -90,6 +121,9 @@ export const StyledCheckboxWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  ${({ theme }) => theme.mq.tablet} {
+    width: 40%;
+  }
 `;
 export const SubmitButton = styled.button`
   width: 100%;
@@ -106,6 +140,9 @@ export const SubmitButton = styled.button`
   transition-timing-function: ease-in-out;
   &:hover {
     background-color: ${({ theme }) => theme.decoratedText};
+  }
+  ${({ theme }) => theme.mq.tablet} {
+    width: 200px;
   }
 `;
 export const StyledPopUpWrapper = styled.div`
@@ -173,4 +210,7 @@ export const StyledConfirmButton = styled(SubmitButton)`
     border: 1px dashed ${({ theme }) => theme.decoratedText};
     color: ${({ theme }) => theme.decoratedText};
   }
+`;
+export const StyledWarningText = styled.span`
+  color: red;
 `;

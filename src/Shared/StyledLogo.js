@@ -25,4 +25,8 @@ transform:translate(-50%,50%);
 z-index: 9999;
 transition: transform 0.3s;
 `}
+  ${({ theme }) => theme.mq.tablet} {
+    height: 180px;
+    width: 220px;
+  }
 `;

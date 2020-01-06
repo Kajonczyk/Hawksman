@@ -15,7 +15,8 @@ import {
   StyledPopUpDiv,
   StyledPopUpDivWrapper,
   StyledCheckIcon,
-  StyledConfirmButton
+  StyledConfirmButton,
+  StyledWarningText
 } from "./ContactFormStyles";
 
 export class ContactForm extends Component {
@@ -29,10 +30,10 @@ export class ContactForm extends Component {
     textCheckbox: false,
     isPopUpDisplayed: false,
     errors: {
-      nameField: true,
-      emailField: true,
-      phoneField: true,
-      textField: true
+      nameField: false,
+      emailField: false,
+      phoneField: false,
+      textField: false
     }
   };
 
@@ -51,11 +52,16 @@ export class ContactForm extends Component {
 
   validateForm = () => {
     const MIN_LENGTH = 8;
+    const MAX_LENGTH = 12;
     const { nameField, emailField, phoneField, textField } = this.state;
     return {
-      nameField: nameField.length <= 3,
-      emailField: !emailField.includes("@") || emailField.length <= MIN_LENGTH,
-      phoneField: phoneField.length <= MIN_LENGTH,
+      nameField: nameField.length <= 3 || nameField.length >= MAX_LENGTH * 1.5,
+      emailField:
+        !emailField.includes("@") ||
+        emailField.length <= MIN_LENGTH ||
+        emailField.length >= MAX_LENGTH * 4,
+      phoneField:
+        phoneField.length <= MIN_LENGTH || phoneField.length >= MAX_LENGTH,
       textField: textField.length <= MIN_LENGTH
     };
   };
@@ -75,10 +81,10 @@ export class ContactForm extends Component {
   cleanFormErrors = () => {
     this.setState({
       errors: {
-        nameField: true,
-        emailField: true,
-        phoneField: true,
-        textField: true
+        nameField: false,
+        emailField: false,
+        phoneField: false,
+        textField: false
       }
     });
   };
@@ -105,6 +111,7 @@ export class ContactForm extends Component {
         errors: validateResponse
       });
     }
+    console.log(this.state.errors);
   };
 
   render() {
@@ -131,7 +138,11 @@ export class ContactForm extends Component {
                   value={nameField}
                   onChange={this.handleChange}
                   id="nameField"
+                  isNotValid={this.state.errors.nameField}
                 />
+                {this.state.errors.nameField && (
+                  <StyledWarningText>Name is too short</StyledWarningText>
+                )}
               </label>
             </StyledInputWrapper>
             <StyledInputWrapper>
@@ -143,19 +154,29 @@ export class ContactForm extends Component {
                   value={emailField}
                   onChange={this.handleChange}
                   id="emailField"
+                  isNotValid={this.state.errors.emailField}
                 />
+                {this.state.errors.emailField && (
+                  <StyledWarningText>Email is not valid</StyledWarningText>
+                )}
               </label>
             </StyledInputWrapper>
             <StyledInputWrapper>
               <label>
                 <StyledSpan>My phone is</StyledSpan> <br />
                 <StyledInputField
-                  type="text"
+                  type="number"
                   placeholder="Add your phone"
                   value={phoneField}
                   onChange={this.handleChange}
                   id="phoneField"
+                  isNotValid={this.state.errors.phoneField}
                 />
+                {this.state.errors.phoneField && (
+                  <StyledWarningText>
+                    Phone number is not valid
+                  </StyledWarningText>
+                )}
               </label>
             </StyledInputWrapper>
             <StyledInputWrapper>
@@ -168,7 +189,11 @@ export class ContactForm extends Component {
                   value={textField}
                   onChange={this.handleChange}
                   id="textField"
+                  isNotValid={this.state.errors.textField}
                 />
+                {this.state.errors.textField && (
+                  <StyledWarningText>Message is too short</StyledWarningText>
+                )}
               </label>
             </StyledInputWrapper>
             <br />

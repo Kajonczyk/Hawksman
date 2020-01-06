@@ -21,6 +21,11 @@ export const CustomParagraph = styled(StyledParagraph)`
     `
   line-height:normal;
   font-size: 0.9rem
+  
 
   `}
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: 1.2rem;
+    margin: 40px;
+  }
 `;

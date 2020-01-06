@@ -8,13 +8,16 @@ export const StyledWrapper = styled.div`
   height: 450px;
   background-image: url(${bg_contact});
   background-size: cover;
-    background-position: center right
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content:space-evenly;
-    position:relative;
+  background-position: center right
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:space-evenly;
+  position:relative;
+  ${({ theme }) => theme.mq.tablet} {
+    height:600px;
+  }
 `;
 export const CustomSectionIndicator = styled(StyledSectionIndicator)`
   transform: rotate(-90deg);

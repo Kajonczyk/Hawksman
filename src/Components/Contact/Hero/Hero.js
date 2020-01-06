@@ -14,9 +14,7 @@ export const Hero = () => {
         {context => <CustomLogo active={context.state.isMenuActive} />}
       </NavbarContext.Consumer>
 
-      <StyledSecondHeading>
-        Contact <br /> Hawksman
-      </StyledSecondHeading>
+      <StyledSecondHeading>Contact Hawksman</StyledSecondHeading>
       <CustomSectionIndicator />
     </StyledWrapper>
   );
