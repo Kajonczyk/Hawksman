@@ -14,21 +14,31 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-bottom: 60px;
+  position: relative;
 `;
 export const CustomLogo = styled(StyledLogo)`
-  margin: 0px auto;
+  margin: 50px auto;
   ${({ active }) =>
     active &&
     `
   transform: translate(-50%, 50%);
   `}
+  ${({ theme }) => theme.mq.tablet} {
+    margin: 120px 0px 30px 0px;
+  }
 `;
 export const LineBreak = styled.div`
   height: ${({ height }) => height}px;
 `;
 export const CustomParagraph = styled(StyledParagraph)`
-  margin: 10px 20px;
+  margin: 40px 20px;
   font-size: ${({ theme }) => theme.font.size.decoratedTextSize};
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.s};
+    margin-top: 60px;
+  }
 `;
 export const CustomSectionIndicator = styled(StyledSectionIndicator)`
   transform: rotate(-90deg);
@@ -39,4 +49,8 @@ export const CustomSectionIndicator = styled(StyledSectionIndicator)`
     background-color: ${({ theme }) => theme.decoratedText};
     left: 100%;
   }
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, -50%) rotate(-90deg);
 `;

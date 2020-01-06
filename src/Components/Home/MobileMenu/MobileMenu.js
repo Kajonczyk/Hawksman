@@ -24,6 +24,7 @@ export const MobileMenu = ({ isMobileMenuExpanded, toggleMenu }) => {
     <>
       <StyledWrapper active={isMobileMenuExpanded}>
         <div></div>
+        <div></div>
 
         <StyledUl>
           {menuItems.map(item => (

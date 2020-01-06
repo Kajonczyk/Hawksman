@@ -7,6 +7,13 @@ export const StyledWrapper = styled.div`
   min-height: 300px;
   background-color: ${({ theme }) => theme.greyColor};
   position: relative;
+  ${({ theme }) => theme.mq.tablet} {
+    display: flex;
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    display: flex;
+    margin: 0px auto;
+  }
 `;
 export const CustomDecoratedText = styled(StyledDecoratedText)`
   font-size: 0.9rem;
@@ -21,11 +28,19 @@ export const StyledPortrait = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  ${({ theme }) => theme.mq.tablet} {
+    height: 350px;
+    margin-top: 100px;
+  }
 `;
 export const StyledImg = styled.img`
   height: 270px;
   transform: translateY(-20px);
   max-width: 100%;
+  ${({ theme }) => theme.mq.tablet} {
+    transform: translateY(-40px);
+    height: 390px;
+  }
 `;
 export const StyledPortaitInfo = styled.div`
   position: absolute;
@@ -33,12 +48,12 @@ export const StyledPortaitInfo = styled.div`
   bottom: 0%;
   background-color: ${({ theme }) => theme.greyColor};
   height: 70px;
-  width: 140px;
   text-align: right;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  padding: 0px 20px;
   &::before {
     content: "";
     height: 3px;
@@ -50,17 +65,29 @@ export const StyledPortaitInfo = styled.div`
 
     background-color: ${({ theme }) => theme.decoratedText};
   }
+  ${({ theme }) => theme.mq.tablet} {
+    transform: translateX(-60px);
+  }
 `;
 export const PersonInfo = styled.p`
   color: white;
   font-size: ${({ theme }) => theme.font.size.s};
-  font-family: ${({ theme }) => theme.font.family.Playfair};
+  font-family: ${({ theme }) => theme.font.family.NotoSerif};
   ${({ role }) =>
     role &&
     `
     font-size: 0.9rem;
   opacity:0.5;
+  
   `}
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.s};
+    ${({ role }) =>
+      role &&
+      `
+    font-size: 1.1rem;
+    `}
+  }
 `;
 export const StyledDataWrapper = styled.div`
   display: flex;
@@ -69,6 +96,11 @@ export const StyledDataWrapper = styled.div`
   justify-content: center;
   height: 110px;
   margin-top: 20px;
+  ${({ theme }) => theme.mq.tablet} {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `;
 export const StyledIconWrapper = styled.div`
   display: flex;
@@ -87,4 +119,23 @@ export const StyledMailIcon = styled(Mail)`
 export const StyledIconText = styled(StyledDecoratedText)`
   font-size: 0.7rem;
   padding-top: 3px;
+`;
+export const StyledDiv = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    width: 50%;
+    ${({ second }) =>
+      second &&
+      `
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    `}
+  }
+`;
+export const StyledContent = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    max-width: 1024px;
+    margin: 0px auto;
+    display: flex;
+  }
 `;
