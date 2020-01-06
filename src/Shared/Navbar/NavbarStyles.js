@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from "styled-components";
 export const StyledWrapper = styled.div`
   position: fixed;
   top: 0px;
-  z-index: 9999;
+  z-index: 9998;
   width: 100%;
 `;
 export const StyledNavBar = styled.nav`
