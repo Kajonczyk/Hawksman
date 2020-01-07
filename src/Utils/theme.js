@@ -11,6 +11,7 @@ export const theme = {
       s: "1.3rem",
       m: "1.6rem",
       l: "2.3rem",
+      xl: "2.6rem",
       mobileSwiperItemDescription: "1.1rem",
       headingSectionNumber: ".7rem",
       decoratedTextSize: "1rem",
@@ -24,6 +25,7 @@ export const theme = {
   },
   mq: {
     tablet: "@media (min-width: 768px)",
-    desktop: "@media (min-width: 1024px)"
+    desktop: "@media (min-width: 1024px)",
+    desktopLarge: "@media (min-width: 1440px)"
   }
 };

@@ -16,7 +16,7 @@ export const StyledLogo = styled.div`
   transform: translateY(${({ active }) => (active ? "-25px" : "0px")})
     scale(${({ footer }) => (footer ? "0.85" : "1")});
   transition: transform 0.3s;
-  margin: ${({ footer }) => (footer ? "30px 0px" : "0px auto")};
+  margin: 0px auto;
   ${({ active }) =>
     active &&
     `
@@ -28,5 +28,9 @@ transition: transform 0.3s;
   ${({ theme }) => theme.mq.tablet} {
     height: 180px;
     width: 220px;
+    ${({ footer }) =>
+      footer &&
+      `
+    `}
   }
 `;

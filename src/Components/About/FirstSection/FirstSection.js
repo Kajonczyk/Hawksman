@@ -11,17 +11,17 @@ import {
   StyledIconWrapper,
   StyledIconText,
   StyledMailIcon,
-  StyledDiv,
-  StyledContent
+  StyledDiv
 } from "./FirstSectionStyles";
 import { StyledHeading } from "../../../Shared/StyledHeading";
+import { StyledContent } from "../../../Shared/StyledContent";
 
 import portraitJames from "../../../Images/About/portraitJames.png";
 
 export const FirstSection = () => {
   return (
     <StyledWrapper>
-      <StyledContent>
+      <StyledContent flex>
         <StyledDiv>
           <StyledHeading sectionNumber="01" color="white">
             Behind the <br /> scenes

@@ -10,10 +10,12 @@ export const StyledWrapper = styled.div`
   ${({ theme }) => theme.mq.tablet} {
     background-position: -10% center;
     background-size: 50%;
+    padding-top: 30px;
   }
   ${({ theme }) => theme.mq.desktop} {
     background-size: 600px;
     background-position: 20% center;
+    padding-top: 40px;
   }
 `;
 export const StyledNumbersWrapper = styled.div`
@@ -37,8 +39,6 @@ export const StyledText = styled(StyledDecoratedText)`
   padding: 5px 0px;
   font-size: ${({ theme }) => theme.font.size.xs};
   font-family: ${({ theme }) => theme.font.family.Noto};
-  ${({ theme }) => theme.mq.tablet} {
-  }
 `;
 
 export const StyledListWrapper = styled.div`
@@ -47,11 +47,5 @@ export const StyledListWrapper = styled.div`
     flex-direction: row;
     flex-wrap: wrap;
     margin-left: 40%;
-  }
-`;
-export const StyledContent = styled.div`
-  ${({ theme }) => theme.mq.desktop} {
-    max-width: 1024px;
-    margin: 0px auto;
   }
 `;

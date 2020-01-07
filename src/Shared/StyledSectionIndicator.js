@@ -17,4 +17,12 @@ export const StyledSectionIndicator = styled.div`
     border: 2px solid ${({ theme }) => theme.decoratedText};
     z-index: 9999;
   }
+  ${({ theme }) => theme.mq.tablet} {
+    flex-direction: row;
+    ${({ features }) =>
+      features &&
+      `
+    transform: rotate(90deg);
+    `}
+  }
 `;

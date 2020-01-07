@@ -10,7 +10,19 @@ export const StyledWrapper = styled.div`
   background-position: center 40%;
   background-repeat: no-repeat;
   position: relative;
-  padding-bottom: 200px;
+  padding-bottom: 300px;
+  ${({ theme }) => theme.mq.tablet} {
+    padding: 50px 0px 350px;
+    background-size: 60%;
+    background-position: center left;
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    background-size: 600px;
+    background-position: 12% center;
+  }
+  ${({ theme }) => theme.mq.desktopLarge} {
+    background-position: 18% center;
+  }
 `;
 export const StyledText = styled(StyledDecoratedText)`
   font-size: calc(${({ theme }) => theme.font.size.xs} * 0.95);
@@ -22,4 +34,17 @@ export const StyledText = styled(StyledDecoratedText)`
   opacity: 0.8;
   padding: 20px;
   `}
+  ${({ theme }) => theme.mq.tablet} {
+    padding-bottom: 0px;
+    ${({ grey, theme }) =>
+      grey &&
+      `
+    font-size: calc(${theme.font.size.s} * 0.8);
+  `}
+  }
+`;
+export const StyledTextWrapper = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    margin-left: 45%;
+  }
 `;

@@ -3,6 +3,10 @@ import styled from "styled-components";
 import { StyledButton } from "./StyledButton";
 import { StyledSectionIndicator } from "./StyledSectionIndicator";
 import { StyledDecoratedText } from "./StyledDecoratedText";
+import history from "../Utils/history";
+const changeURL = url => {
+  history.push(url);
+};
 export const StyledFeatures = () => {
   return (
     <StyledSectionDivider>
@@ -10,14 +14,18 @@ export const StyledFeatures = () => {
         <StyledDecoratedText>
           See all of our handpicked <br /> properties
         </StyledDecoratedText>
-        <StyledDecoratedButton>View Portfolio</StyledDecoratedButton>
+        <StyledDecoratedButton onClick={() => changeURL("/portfolio")}>
+          View Portfolio
+        </StyledDecoratedButton>
       </StyledDividerWrapper>
-      <StyledSectionIndicator />
+      <StyledSectionIndicator features />
       <StyledDividerWrapper>
         <StyledDecoratedText>
           Interested in putting your <br /> property for sale?
         </StyledDecoratedText>
-        <StyledDecoratedButton>Contact us</StyledDecoratedButton>
+        <StyledDecoratedButton onClick={() => changeURL("/contact")}>
+          Contact us
+        </StyledDecoratedButton>
       </StyledDividerWrapper>
     </StyledSectionDivider>
   );
@@ -32,10 +40,14 @@ export const StyledSectionDivider = styled.div`
   align-items: center;
   position: absolute;
   left: 50%;
-  bottom: -200px;
+  bottom: -150px;
   z-index: 1000;
   width: 80%;
   transform: translate(-50%, 0%);
+  ${({ theme }) => theme.mq.tablet} {
+    flex-direction: row;
+    height: 300px;
+  }
 `;
 export const StyledDividerWrapper = styled.div`
   text-align: center;

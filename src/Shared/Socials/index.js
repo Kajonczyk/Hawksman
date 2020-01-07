@@ -21,6 +21,9 @@ export const IconWrapper = styled.div`
   padding: ${({ footer }) =>
     footer ? "40px 0px 40px 0px" : "0px 0px 40px 0px"};
   color: ${iconColor};
+  ${({ theme }) => theme.mq.tablet} {
+    margin: -30px 0px 0px -15px;
+  }
 `;
 export const StyledFacebook = styled(Facebook)`
   height: ${iconSize};
