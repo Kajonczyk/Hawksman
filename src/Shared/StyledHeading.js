@@ -19,7 +19,7 @@ export const StyledHeading = styled.h2`
     color: ${({ theme }) => theme.decoratedText};
     }
     ${({ theme }) => theme.mq.tablet} {
-        font-size: ${({ theme }) => theme.font.size.xl};
+        font-size: ${({ theme }) => theme.font.size.xl};        
     }
 
 `;

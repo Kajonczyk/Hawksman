@@ -7,6 +7,12 @@ export const Wrapper = styled.div`
   padding: 50px 20px 20px 20px;
   overflow: hidden;
   position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+  ${({ theme }) => theme.mq.desktop} {
+    max-width: 500px;
+    margin-left: calc(21% + 222px);
+  }
 `;
 export const SwiperWrapper = styled.div`
   margin: 0px auto;
@@ -30,6 +36,9 @@ export const SwiperNavigationWrapper = styled.ul`
   margin-top: 20px;
   justify-content: center;
   flex-direction: column;
+  ${({ theme }) => theme.mq.tablet} {
+    padding-right: 20px;
+  }
 `;
 
 export const SwiperNavigationNumbers = styled.li`
@@ -50,6 +59,9 @@ export const SwiperSlideIndicatorWrapper = styled.div`
   margin: 20px 0px 0px 20px;
   height: 160px;
   background-color: grey;
+  ${({ theme }) => theme.mq.tablet} {
+    margin-right: 20px;
+  }
 `;
 
 const setIndicatorPosition = index => {
@@ -91,6 +103,9 @@ export const SwiperArrowDown = styled(SwiperArrowUp)`
 `;
 export const StyledP = styled.p`
   margin: 0px 25px;
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.s};
+  }
 `;
 export const SwiperItemWrapper = styled.div`
   height: 160px;

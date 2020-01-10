@@ -13,7 +13,8 @@ import {
   StyledPaginationWrapper,
   StyledPaginationLine,
   StyledPaginationIndicator,
-  StyledPagination
+  StyledPagination,
+  StyledButtonWrapper
 } from "./HorizontalSliderStyles";
 
 import { propertiesData } from "../propertiesData";
@@ -74,7 +75,9 @@ export class HorizontalSlider extends Component {
                     {item.localisation} <StyledSeparator>/</StyledSeparator>
                     {item.sqFeet}
                   </StyledLocalisationText>
-                  <StyledButton>See Details</StyledButton>
+                  <StyledButtonWrapper>
+                    <StyledButton swiperButton>See Details</StyledButton>
+                  </StyledButtonWrapper>
                 </div>
               </div>
             </SwiperItem>

@@ -3,39 +3,42 @@ import {
   StyledWrapper,
   StyledLogoDescription,
   StyledHeading,
-  StyledSecondHeading
+  StyledSecondHeading,
+  StyledParagraph
 } from "./HeroStyles";
 import { StyledLogo } from "../../../Shared/StyledLogo";
 import { VerticalSlider } from "../../VerticalSlider/VerticalSlider";
 import { NavbarContext } from "../../../Shared/NavbarContext";
-import { StyledParagraph } from "../../../Shared/StyledParagraph";
+import { StyledContent } from "../../../Shared/StyledContent";
 
 export class Hero extends Component {
   render() {
     return (
       <>
         <StyledWrapper>
-          <NavbarContext.Consumer>
-            {context => (
-              <StyledLogo active={context.state.isMenuActive}>
-                <StyledLogoDescription>Real Estate</StyledLogoDescription>
-              </StyledLogo>
-            )}
-          </NavbarContext.Consumer>
+          <StyledContent>
+            <NavbarContext.Consumer>
+              {context => (
+                <StyledLogo active={context.state.isMenuActive}>
+                  <StyledLogoDescription>Real Estate</StyledLogoDescription>
+                </StyledLogo>
+              )}
+            </NavbarContext.Consumer>
 
-          <StyledHeading>
-            Hawksman has <br /> been created
-          </StyledHeading>
+            <StyledHeading>
+              Hawksman has <br /> been created
+            </StyledHeading>
 
-          <VerticalSlider />
-          <StyledParagraph> A new kind of real estate agent </StyledParagraph>
-          <StyledSecondHeading>
-            Integrity. Service. Results.
-          </StyledSecondHeading>
-          <StyledParagraph grey>
-            All the time, every time. We provide you with the platform to sell
-            your home the way you want to.
-          </StyledParagraph>
+            <VerticalSlider />
+            <StyledParagraph> A new kind of real estate agent </StyledParagraph>
+            <StyledSecondHeading>
+              Integrity. Service. Results.
+            </StyledSecondHeading>
+            <StyledParagraph grey>
+              All the time, every time. We provide you with the platform to sell
+              your home the way you want to.
+            </StyledParagraph>
+          </StyledContent>
         </StyledWrapper>
       </>
     );

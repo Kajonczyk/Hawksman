@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { StyledButton } from "./StyledButton";
 import { StyledSectionIndicator } from "./StyledSectionIndicator";
 import { StyledDecoratedText } from "./StyledDecoratedText";
+import { StyledContent } from "./StyledContent";
 import history from "../Utils/history";
 const changeURL = url => {
   history.push(url);
@@ -47,6 +48,7 @@ export const StyledSectionDivider = styled.div`
   ${({ theme }) => theme.mq.tablet} {
     flex-direction: row;
     height: 300px;
+    max-width: 1024px;
   }
 `;
 export const StyledDividerWrapper = styled.div`

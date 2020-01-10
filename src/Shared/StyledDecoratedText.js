@@ -11,5 +11,11 @@ export const StyledDecoratedText = styled.p`
       `
     font-size: ${theme.font.size.s}
     `}
+    ${({ center }) =>
+      center &&
+      `
+        margin: 0px auto;
+        width: 66%;
+    `}
   }
 `;
