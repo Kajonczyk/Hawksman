@@ -6,3 +6,10 @@ export const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
+export const CustomStyledContent = styled.div`
+  ${({ theme }) => theme.mq.desktop} {
+    max-width: 1024px;
+    margin: 0px auto;
+    overflow: hidden;
+  }
+`;

@@ -2,21 +2,30 @@ import styled from "styled-components";
 
 export const SwiperWrapper = styled.div`
   display: flex;
-  height: 400px;
-  width: 100%;
+  min-height: 400px;
   position: relative;
   z-index: 1;
   margin-top: 50px;
+  padding-bottom: 40px;
+  ${({ theme }) => theme.mq.tablet} {
+    padding-bottom: 60px;
+  }
 `;
 export const ItemWrapper = styled.div`
   display: flex;
+  margin: 0px auto;
 `;
 export const SwiperItem = styled.div`
   display: flex;
   justify-content: center;
+  margin: 0px auto;
 `;
 export const StyledImgWrapper = styled.div`
   position: relative;
+  ${({ theme }) => theme.mq.tablet} {
+    width: 80%;
+    margin: 0px auto;
+  }
 `;
 export const StyledImg = styled.img`
   display: block;
@@ -114,11 +123,19 @@ export const StyledPaginationIndicator = styled.div`
     padding: 2px;
     border: 2px solid;
     transform: rotate(45deg);
-    border-color: ${({ theme }) => theme.decoratedText};
+    border-color: white;
+    background-color: ${({ theme }) => theme.decoratedText};
+    box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.decoratedText};
   }
 `;
 export const StyledPagination = styled.div`
   display: flex;
   position: relative;
   width: 200px;
+`;
+export const StyledButtonWrapper = styled.div`
+  ${({ theme }) => theme.mq.tablet} {
+    width: 80%;
+    margin: 0px auto;
+  }
 `;

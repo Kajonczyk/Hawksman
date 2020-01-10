@@ -20,4 +20,11 @@ export const StyledButton = styled.button`
   &::after {
     left: calc(100% - 10px);
   }
+  ${({ theme }) => theme.mq.tablet} {
+    ${({ swiperButton }) =>
+      swiperButton &&
+      `
+      margin: 20px 0px;
+    `}
+  }
 `;

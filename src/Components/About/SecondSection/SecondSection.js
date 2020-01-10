@@ -1,18 +1,18 @@
 import React from "react";
 import { StyledHeading } from "../../../Shared/StyledHeading";
 import { StyledDecoratedText } from "../../../Shared/StyledDecoratedText";
+import { StyledContent } from "../../../Shared/StyledContent";
 import {
   StyledNumber,
   StyledNumbersWrapper,
   StyledText,
   StyledWrapper,
-  StyledListWrapper,
-  StyledContent
+  StyledListWrapper
 } from "./SecondSectionStyles";
 export const SecondSection = () => {
   return (
     <StyledWrapper>
-      <StyledContent>
+      <StyledContent flex column>
         <StyledHeading
           color={({ theme }) => theme.greyColor}
           sectionNumber="03"
@@ -21,7 +21,7 @@ export const SecondSection = () => {
         </StyledHeading>
         >
         <StyledListWrapper>
-          <StyledDecoratedText>
+          <StyledDecoratedText big>
             A new kind of estate agent. You get a quality service 100% of the
             time. We don’t hire ‘door openers’ for weekend viewings.
           </StyledDecoratedText>

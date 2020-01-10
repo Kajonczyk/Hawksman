@@ -132,10 +132,3 @@ export const StyledDiv = styled.div`
     `}
   }
 `;
-export const StyledContent = styled.div`
-  ${({ theme }) => theme.mq.tablet} {
-    max-width: 1024px;
-    margin: 0px auto;
-    display: flex;
-  }
-`;
