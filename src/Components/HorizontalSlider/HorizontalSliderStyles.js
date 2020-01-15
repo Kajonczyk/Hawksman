@@ -26,6 +26,9 @@ export const StyledImgWrapper = styled.div`
     width: 80%;
     margin: 0px auto;
   }
+  ${({ theme }) => theme.mq.desktop} {
+    width: 100%;
+  }
 `;
 export const StyledImg = styled.img`
   display: block;

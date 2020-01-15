@@ -1,25 +1,16 @@
 import React from "react";
+import { StyledWrapper } from "./MobileMenuStyles";
+import { StyledSocials } from "../../../Shared/Socials/StyledSocials";
 import {
-  StyledWrapper,
   StyledListItemLink,
   StyledUl,
   StyledListItem
-} from "./MobileMenuStyles";
-import { StyledSocials } from "../../../Shared/Socials/StyledSocials";
-import history from "../../../Utils/history";
-const menuItems = [
-  { description: "Home", url: "/" },
-  { description: "About", url: "/about" },
-  { description: "Portfolio", url: "/portfolio" },
-  { description: "Contact", url: "/contact" }
-];
-const changeRoute = url => {
-  history.push(url);
-};
-const isUrlExact = item => history.location.pathname == item.url;
+} from "../MenuSharedItems/StyledSharedItems";
+import { changeRoute, isUrlExact } from "../MenuSharedItems/SharedMethods";
 
+import { menuItems } from "../menuItems";
 export const MobileMenu = ({ isMobileMenuExpanded, toggleMenu }) => {
-  let activeElement = false;
+  let isElementActive = false;
   return (
     <>
       <StyledWrapper active={isMobileMenuExpanded}>
@@ -29,7 +20,7 @@ export const MobileMenu = ({ isMobileMenuExpanded, toggleMenu }) => {
         <StyledUl>
           {menuItems.map(item => (
             <StyledListItem>
-              {(activeElement = isUrlExact(item))}
+              {(isElementActive = isUrlExact(item))}
 
               <StyledListItemLink
                 href="#"
@@ -37,13 +28,12 @@ export const MobileMenu = ({ isMobileMenuExpanded, toggleMenu }) => {
                   changeRoute(item.url);
                   toggleMenu();
                 }}
-                active={activeElement}
+                active={isElementActive}
               >
                 {item.description}
               </StyledListItemLink>
             </StyledListItem>
           ))}
-          >
         </StyledUl>
 
         <StyledSocials />
