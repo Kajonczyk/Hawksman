@@ -19,6 +19,16 @@ export const StyledContent = styled.div`
       `
         align-items:center;
     `}
+    ${({ spaceBetween }) =>
+      spaceBetween &&
+      `
+      justify-content: space-between;
+    `}
+    ${({ minWidth }) =>
+      minWidth &&
+      `
+      min-width:1023px;
+    `}
 
     ${({ footer }) =>
       footer &&

@@ -13,6 +13,9 @@ export const StyledNavBar = styled.nav`
   background-color: ${({ activeScroll }) =>
     activeScroll ? "white" : "transparent"};
   transition: background-color 0.2s;
+  ${({ theme }) => theme.mq.desktop} {
+    padding: 0px;
+  }
 `;
 export const StyledNavBarItem = styled.p`
   font-family: ${({ theme }) => theme.font.family.Noto};

@@ -7,9 +7,24 @@ import {
   GlobalStyle,
   StyledWrapper
 } from "./NavbarStyles";
-import { MobileMenu } from "../../Components/Home/MobileMenu/MobileMenu";
+import { MobileMenu } from "./MobileMenu/MobileMenu";
+import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 import { NavbarContext } from "../../Shared/NavbarContext";
 export class Navbar extends Component {
+  state = {
+    windowWidth: 0
+  };
+  componentDidMount() {
+    window.addEventListener("resize", this.getWindowWidth);
+    this.getWindowWidth();
+  }
+  getWindowWidth = () => {
+    const windowWidth = window.innerWidth;
+    this.setState({
+      windowWidth
+    });
+    console.log(windowWidth);
+  };
   render() {
     return (
       <StyledWrapper>
@@ -17,19 +32,25 @@ export class Navbar extends Component {
           {context => (
             <>
               <StyledNavBar activeScroll={context.state.isPageScrolled}>
-                <StyledMenuWrapper onClick={() => context.toggleMenu()}>
-                  <StyledHamburgerMenu
-                    active={context.state.isMenuActive}
-                    activeScroll={context.state.isPageScrolled}
-                  />
-                </StyledMenuWrapper>
+                {this.state.windowWidth > 1023 ? (
+                  <DesktopMenu activeScroll={context.state.isPageScrolled} />
+                ) : (
+                  <>
+                    <StyledMenuWrapper onClick={() => context.toggleMenu()}>
+                      <StyledHamburgerMenu
+                        active={context.state.isMenuActive}
+                        activeScroll={context.state.isPageScrolled}
+                      />
+                    </StyledMenuWrapper>
 
-                <StyledNavBarItem
-                  active={context.state.isMenuActive}
-                  activeScroll={context.state.isPageScrolled}
-                >
-                  Contact
-                </StyledNavBarItem>
+                    <StyledNavBarItem
+                      active={context.state.isMenuActive}
+                      activeScroll={context.state.isPageScrolled}
+                    >
+                      Contact
+                    </StyledNavBarItem>
+                  </>
+                )}
               </StyledNavBar>
               <MobileMenu
                 isMobileMenuExpanded={context.state.isMenuActive}

@@ -16,22 +16,3 @@ export const StyledWrapper = styled.div`
   transition: height 0.2s, opacity 0s;
   overflow: hidden;
 `;
-
-export const StyledListItem = styled.li`
-  padding: 20px;
-  text-align: center;
-`;
-export const StyledListItemLink = styled.a`
-  color: ${({ theme }) => theme.greyColor};
-  text-decoration: none;
-  font-size: ${({ theme }) => theme.font.size.m};
-  ${({ active }) =>
-    active &&
-    `
-  color:#d7a27e;
-  `}
-`;
-export const StyledUl = styled.ul`
-  list-style: none;
-  padding: 0px;
-`;
