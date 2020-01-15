@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { propertiesData } from "../../propertiesData";
 import { StyledButton } from "../../../Shared/StyledButton";
-import { StyledFeatures } from "../../../Shared/StyledFeatures";
 
 import {
   StyledImgWrapper,
@@ -118,29 +117,26 @@ export class Properties extends Component {
   render() {
     return (
       <StyledDiv>
-        <div>
-          {this.state.properties.map(item => (
-            <StyledPropertyWrapper key={item.id}>
+        {this.state.properties.map(item => (
+          <StyledPropertyWrapper key={item.id}>
+            <div>
+              <StyledImgWrapper>
+                <StyledImg src={item.img} />
+                <StyledItemDescription>
+                  {item.description}
+                </StyledItemDescription>
+              </StyledImgWrapper>
               <div>
-                <StyledImgWrapper>
-                  <StyledImg src={item.img} />
-                  <StyledItemDescription>
-                    {item.description}
-                  </StyledItemDescription>
-                </StyledImgWrapper>
-                <div>
-                  <StyledDecoratedText>£{item.price}</StyledDecoratedText>
-                  <StyledDecoratedText>
-                    {item.localisation} <StyledSeparator>/</StyledSeparator>
-                    {item.sqFeet}
-                  </StyledDecoratedText>
-                  <StyledButton>See Details</StyledButton>
-                </div>
+                <StyledDecoratedText>£{item.price}</StyledDecoratedText>
+                <StyledDecoratedText>
+                  {item.localisation} <StyledSeparator>/</StyledSeparator>
+                  {item.sqFeet}
+                </StyledDecoratedText>
+                <StyledButton>See Details</StyledButton>
               </div>
-            </StyledPropertyWrapper>
-          ))}
-        </div>
-        <StyledFeatures />
+            </div>
+          </StyledPropertyWrapper>
+        ))}
       </StyledDiv>
     );
   }
