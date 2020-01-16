@@ -29,7 +29,7 @@ const sortMenuItems = [
   {
     text: "Size: High - Low",
     isActive: false,
-    sortOption: "default"
+    sortOption: "sizeDesc"
   },
   {
     text: "Size: Low - High",
@@ -62,7 +62,6 @@ const locationMenuItems = [
 const setActiveItem = (array, item) => {
   array.forEach(item => (item.isActive = false));
   item.isActive = true;
-  console.log(array);
 };
 export const FilterDesktopMenu = () => {
   const [isSortMenuExpanded, toggleSortMenu] = useState(false);
@@ -80,6 +79,7 @@ export const FilterDesktopMenu = () => {
                 <>
                   {sortMenuItems.map(item => (
                     <StyledListItem
+                      key={item.text}
                       active={item.isActive}
                       onClick={() => {
                         context.setSortOption(item.sortOption);
@@ -106,6 +106,7 @@ export const FilterDesktopMenu = () => {
                 <>
                   {locationMenuItems.map(item => (
                     <StyledListItem
+                      key={item.filterOption}
                       active={item.isActive}
                       onClick={() => {
                         context.setPlaceOption(item.filterOption);
@@ -115,22 +116,6 @@ export const FilterDesktopMenu = () => {
                       {item.text}
                     </StyledListItem>
                   ))}
-
-                  <StyledListItem
-                    onClick={() => context.setPlaceOption("fetcham")}
-                  >
-                    Fetcham
-                  </StyledListItem>
-                  <StyledListItem
-                    onClick={() => context.setPlaceOption("esher")}
-                  >
-                    Esher
-                  </StyledListItem>
-                  <StyledListItem
-                    onClick={() => context.setPlaceOption("walton-on-thames")}
-                  >
-                    Walton-on-thames
-                  </StyledListItem>
                 </>
               )}
             </SortContext.Consumer>

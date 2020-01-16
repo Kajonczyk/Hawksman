@@ -8,6 +8,10 @@ export const StyledWrapper = styled.div`
   ${({ theme }) => theme.mq.tablet} {
     display: block;
   }
+  ${({ theme }) => theme.mq.desktop} {
+    padding: 100px 30px 0px 0px;
+    margin-left: 20px;
+  }
 `;
 export const StyledBox = styled.div`
   border: 1px solid ${({ theme }) => theme.greyColor};
@@ -27,6 +31,7 @@ export const StyledHeading = styled.p`
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+  cursor: pointer;
 `;
 export const StyledList = styled.ul`
   padding: 0px;
@@ -39,6 +44,7 @@ export const StyledListItem = styled.li`
   padding: 10px 0px;
   margin-left: 40px;
   transition: margin 0.2s;
+  cursor: pointer;
   &::before {
     content: "";
     height: 1px;

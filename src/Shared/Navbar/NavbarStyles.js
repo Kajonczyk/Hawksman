@@ -12,6 +12,8 @@ export const StyledNavBar = styled.nav`
   padding: 23px;
   background-color: ${({ activeScroll }) =>
     activeScroll ? "white" : "transparent"};
+  box-shadow: ${({ activeScroll }) =>
+    activeScroll ? "0px -5px 14px black;" : "none"};
   transition: background-color 0.2s;
   ${({ theme }) => theme.mq.desktop} {
     padding: 0px;

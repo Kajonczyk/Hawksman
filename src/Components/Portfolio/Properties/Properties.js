@@ -9,7 +9,8 @@ import {
   StyledDecoratedText,
   StyledSeparator,
   StyledPropertyWrapper,
-  StyledDiv
+  StyledDiv,
+  StyledButtonWrapper
 } from "./PropertiesStyles";
 export class Properties extends Component {
   state = {
@@ -17,19 +18,18 @@ export class Properties extends Component {
     placeOption: "",
     properties: propertiesData
   };
-  static getDerivedStateFromProps(props, state) {
+
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (
-      props.data.sortOption !== state.sortOption ||
-      props.data.placeOption !== state.placeOption
+      nextProps.data.sortOption !== prevState.sortOption ||
+      nextProps.data.placeOption !== prevState.sortOption
     ) {
       return {
-        sortOption: props.data.sortOption,
-        placeOption: props.data.placeOption
+        sortOption: nextProps.data.sortOption,
+        placeOption: nextProps.data.placeOption
       };
     }
-    return null;
   }
-
   componentDidUpdate(prevProps) {
     const { sortOption, placeOption } = this.state;
 
@@ -37,8 +37,8 @@ export class Properties extends Component {
       prevProps.data.sortOption !== sortOption ||
       prevProps.data.placeOption !== placeOption
     ) {
-      this.filterPropertiesByPlace(placeOption);
       this.filterPropertiesWithSortOption(sortOption);
+      this.filterPropertiesByPlace(placeOption);
     }
     return;
   }
@@ -50,8 +50,6 @@ export class Properties extends Component {
   };
 
   filterPropertiesWithSortOption = option => {
-    const propertiesData = [...this.state.properties];
-
     switch (option) {
       case "priceAsc": {
         propertiesData.sort(this.sortPropertiesByPriceAsc);
@@ -123,7 +121,7 @@ export class Properties extends Component {
               <StyledImgWrapper>
                 <StyledImg src={item.img} />
                 <StyledItemDescription>
-                  {item.description}
+                  <p>{item.houseType}</p>
                 </StyledItemDescription>
               </StyledImgWrapper>
               <div>
@@ -132,7 +130,9 @@ export class Properties extends Component {
                   {item.localisation} <StyledSeparator>/</StyledSeparator>
                   {item.sqFeet}
                 </StyledDecoratedText>
-                <StyledButton>See Details</StyledButton>
+                <StyledButtonWrapper>
+                  <StyledButton margin>See Details</StyledButton>
+                </StyledButtonWrapper>
               </div>
             </div>
           </StyledPropertyWrapper>

@@ -5,6 +5,7 @@ import { Hero } from "../../Components/Portfolio/Hero/Hero";
 import { PortfolioSortProvider } from "../../Shared/PortfolioSortContext";
 import { SortContext } from "../../Shared/PortfolioSortContext";
 import { StyledFeatures } from "../../Shared/StyledFeatures";
+import { StyledContent } from "../../Shared/StyledContent";
 import { Properties } from "../../Components/Portfolio/Properties/Properties";
 import { FilterDesktopMenu } from "./FilterDesktopMenu/FilterDesktopMenu";
 import styled from "styled-components";
@@ -14,12 +15,14 @@ export const PortfolioPage = () => {
       <Navbar />
       <PortfolioSortProvider>
         <Hero />
-        <StyledWrapper flex>
-          <FilterDesktopMenu />
-          <SortContext.Consumer>
-            {context => <Properties data={context.state} />}
-          </SortContext.Consumer>
-        </StyledWrapper>
+        <StyledContent>
+          <StyledWrapper flex>
+            <FilterDesktopMenu />
+            <SortContext.Consumer>
+              {context => <Properties data={context.state} />}
+            </SortContext.Consumer>
+          </StyledWrapper>
+        </StyledContent>
       </PortfolioSortProvider>
       <StyledWrapper>
         <StyledFeatures />

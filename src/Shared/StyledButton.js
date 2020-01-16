@@ -7,6 +7,7 @@ export const StyledButton = styled.button`
   background-color: white;
   position: relative;
   margin: 20px;
+  cursor: pointer;
   &::before,
   ::after {
     content: "";
@@ -27,4 +28,9 @@ export const StyledButton = styled.button`
       margin: 20px 0px;
     `}
   }
+  ${({ margin }) =>
+    margin &&
+    `
+      margin: 30px 0px;
+    `}
 `;
