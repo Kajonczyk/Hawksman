@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 
 export const StyledWrapper = styled.div`
   position: fixed;
@@ -64,10 +64,4 @@ export const StyledHamburgerMenu = styled.p`
     background-color:#3c404a;
   }
   `}
-`;
-export const GlobalStyle = createGlobalStyle`
-  body{
-    height: ${({ active }) => (active ? "100vh" : "auto")};
-    overflow: ${({ active }) => (active ? "hidden" : "visible")};
-  }
 `;

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { StyledButton } from "./StyledButton";
 import { StyledSectionIndicator } from "./StyledSectionIndicator";
 import { StyledDecoratedText } from "./StyledDecoratedText";
-import { StyledContent } from "./StyledContent";
 import history from "../Utils/history";
 const changeURL = url => {
   history.push(url);

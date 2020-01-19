@@ -37,7 +37,7 @@ export const FirstSection = () => {
             <StyledImg src={portraitJames}></StyledImg>
             <StyledPortaitInfo>
               <PersonInfo>Thomas Smith</PersonInfo>
-              <PersonInfo role>Founder</PersonInfo>
+              <PersonInfo personRole>Founder</PersonInfo>
             </StyledPortaitInfo>
           </StyledPortrait>
           <StyledDataWrapper>

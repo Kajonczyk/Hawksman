@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+const defaultColor = ({ theme }) => theme.greyColor;
 export const StyledHeading = styled.h2`
     color: ${({ color }) => color};
     font-size: ${({ theme }) => theme.font.size.m}
@@ -23,3 +23,7 @@ export const StyledHeading = styled.h2`
     }
 
 `;
+
+StyledHeading.defaultProps = {
+  color: defaultColor
+};

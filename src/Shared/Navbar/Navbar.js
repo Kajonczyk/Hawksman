@@ -4,7 +4,6 @@ import {
   StyledNavBarItem,
   StyledMenuWrapper,
   StyledHamburgerMenu,
-  GlobalStyle,
   StyledWrapper
 } from "./NavbarStyles";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
@@ -23,7 +22,6 @@ export class Navbar extends Component {
     this.setState({
       windowWidth
     });
-    console.log(windowWidth);
   };
   render() {
     return (

@@ -3,7 +3,6 @@ import {
   StyledWrapper,
   StyledAddress,
   StyledLocationList,
-  StyledDd,
   StyledLink,
   StyledDt,
   StyledCopyright,
@@ -46,15 +45,15 @@ export const Footer = () => {
         <StyledDiv>
           <StyledLocationList>
             {locationData.map(item => (
-              <li>
+              <li key={item.cityName}>
                 <dl>
                   <StyledDt>{item.cityName}</StyledDt>
                   <br />
-                  <StyledDd>
+                  <div>
                     <StyledDt>{item.phoneNumber}</StyledDt>
                     <br />
                     <StyledLink href="#">{item.email}</StyledLink>
-                  </StyledDd>
+                  </div>
                 </dl>
               </li>
             ))}

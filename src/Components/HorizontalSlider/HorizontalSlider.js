@@ -54,7 +54,7 @@ export class HorizontalSlider extends Component {
         >
           <StyledPagination>
             {propertiesData.map(item => (
-              <StyledPaginationLine></StyledPaginationLine>
+              <StyledPaginationLine key={item.id}></StyledPaginationLine>
             ))}
             <StyledPaginationIndicator index={this.state.activeSlide} />
           </StyledPagination>

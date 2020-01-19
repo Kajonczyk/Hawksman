@@ -12,10 +12,7 @@ export const FourthSection = () => {
   return (
     <StyledWrapper>
       <StyledContent>
-        <StyledHeading
-          color={({ theme }) => theme.greyColor}
-          sectionNumber="04"
-        >
+        <StyledHeading sectionNumber="04">
           We stand <br />
           Out
         </StyledHeading>

@@ -69,7 +69,7 @@ export const StyledLocalisationText = styled(StyledDecoratedText)`
     ${({ theme }) => theme.font.size.mobileSwiperItemDescription} * 0.8
   );
 `;
-export const StyledSeparator = styled.p`
+export const StyledSeparator = styled.span`
   color: black;
   margin: 0px;
   display: inline-block;
@@ -103,6 +103,9 @@ const setIndicatorPosition = index => {
     }
     case 4: {
       return "calc(100% / 4 + 177.75px)";
+    }
+    default: {
+      return;
     }
   }
 };

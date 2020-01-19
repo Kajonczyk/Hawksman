@@ -70,7 +70,6 @@ export const StyledItemDescription = styled.div`
 
   }
 `;
-// font-size: ${({ theme }) => theme.font.size.m};
 
 export const StyledDecoratedText = styled.p`
   color: ${({ theme }) => theme.decoratedText};
@@ -85,7 +84,7 @@ export const StyledDecoratedText = styled.p`
     padding: 15px 0px 0px;
   }
 `;
-export const StyledSeparator = styled.p`
+export const StyledSeparator = styled.span`
   color: black;
   margin: 0px 5px;
   display: inline-block;

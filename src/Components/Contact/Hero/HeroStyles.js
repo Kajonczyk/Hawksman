@@ -2,7 +2,6 @@ import styled from "styled-components";
 import bg_contact from "../../../Images/Contact/bgContact.jpg";
 import { StyledSectionIndicator } from "../../../Shared/StyledSectionIndicator";
 import { StyledLogo } from "../../../Shared/StyledLogo";
-import { StyledParagraph } from "../../../Shared/StyledParagraph";
 
 export const StyledWrapper = styled.div`
   height: 450px;

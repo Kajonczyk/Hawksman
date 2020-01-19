@@ -9,7 +9,6 @@ import {
 import { SortContext } from "../../../Shared/PortfolioSortContext";
 import { StyledIcon } from "../../../Components/Portfolio/Hero/HeroStyles";
 
-const setItemActive = () => true;
 const sortMenuItems = [
   {
     text: "Default",

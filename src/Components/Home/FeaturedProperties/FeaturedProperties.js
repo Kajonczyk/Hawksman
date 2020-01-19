@@ -7,10 +7,7 @@ export const FeaturedProperties = () => {
   return (
     <StyledWrapper>
       <CustomStyledContent>
-        <StyledHeading
-          color={({ theme }) => theme.greyColor}
-          sectionNumber="01"
-        >
+        <StyledHeading sectionNumber="01">
           Featured <br />
           Properties
         </StyledHeading>
