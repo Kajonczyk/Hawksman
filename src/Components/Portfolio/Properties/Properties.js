@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { propertiesData } from "../../propertiesData";
 import { StyledButton } from "../../../Shared/StyledButton";
-import { StyledFeatures } from "../../../Shared/StyledFeatures";
 
 import {
   StyledImgWrapper,
@@ -10,7 +9,8 @@ import {
   StyledDecoratedText,
   StyledSeparator,
   StyledPropertyWrapper,
-  StyledDiv
+  StyledDiv,
+  StyledButtonWrapper
 } from "./PropertiesStyles";
 export class Properties extends Component {
   state = {
@@ -18,19 +18,18 @@ export class Properties extends Component {
     placeOption: "",
     properties: propertiesData
   };
-  static getDerivedStateFromProps(props, state) {
+
+  static getDerivedStateFromProps(nextProps, prevState) {
     if (
-      props.data.sortOption !== state.sortOption ||
-      props.data.placeOption !== state.placeOption
+      nextProps.data.sortOption !== prevState.sortOption ||
+      nextProps.data.placeOption !== prevState.sortOption
     ) {
       return {
-        sortOption: props.data.sortOption,
-        placeOption: props.data.placeOption
+        sortOption: nextProps.data.sortOption,
+        placeOption: nextProps.data.placeOption
       };
     }
-    return null;
   }
-
   componentDidUpdate(prevProps) {
     const { sortOption, placeOption } = this.state;
 
@@ -38,8 +37,8 @@ export class Properties extends Component {
       prevProps.data.sortOption !== sortOption ||
       prevProps.data.placeOption !== placeOption
     ) {
-      this.filterPropertiesByPlace(placeOption);
       this.filterPropertiesWithSortOption(sortOption);
+      this.filterPropertiesByPlace(placeOption);
     }
     return;
   }
@@ -51,8 +50,6 @@ export class Properties extends Component {
   };
 
   filterPropertiesWithSortOption = option => {
-    const propertiesData = [...this.state.properties];
-
     switch (option) {
       case "priceAsc": {
         propertiesData.sort(this.sortPropertiesByPriceAsc);
@@ -118,29 +115,28 @@ export class Properties extends Component {
   render() {
     return (
       <StyledDiv>
-        <div>
-          {this.state.properties.map(item => (
-            <StyledPropertyWrapper key={item.id}>
+        {this.state.properties.map(item => (
+          <StyledPropertyWrapper key={item.id}>
+            <div>
+              <StyledImgWrapper>
+                <StyledImg src={item.img} />
+                <StyledItemDescription>
+                  <p>{item.houseType}</p>
+                </StyledItemDescription>
+              </StyledImgWrapper>
               <div>
-                <StyledImgWrapper>
-                  <StyledImg src={item.img} />
-                  <StyledItemDescription>
-                    {item.description}
-                  </StyledItemDescription>
-                </StyledImgWrapper>
-                <div>
-                  <StyledDecoratedText>£{item.price}</StyledDecoratedText>
-                  <StyledDecoratedText>
-                    {item.localisation} <StyledSeparator>/</StyledSeparator>
-                    {item.sqFeet}
-                  </StyledDecoratedText>
-                  <StyledButton>See Details</StyledButton>
-                </div>
+                <StyledDecoratedText>£{item.price}</StyledDecoratedText>
+                <StyledDecoratedText>
+                  {item.localisation} <StyledSeparator>/</StyledSeparator>
+                  {item.sqFeet}
+                </StyledDecoratedText>
+                <StyledButtonWrapper>
+                  <StyledButton margin>See Details</StyledButton>
+                </StyledButtonWrapper>
               </div>
-            </StyledPropertyWrapper>
-          ))}
-        </div>
-        <StyledFeatures />
+            </div>
+          </StyledPropertyWrapper>
+        ))}
       </StyledDiv>
     );
   }

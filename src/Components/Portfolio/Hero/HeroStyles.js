@@ -9,6 +9,9 @@ export const StyledWrapper = styled.div`
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
+  ${({ theme }) => theme.mq.tablet} {
+    height: 400px;
+  }
 `;
 export const StyledFilterLabel = styled.div`
   background-color: ${({ theme }) => theme.darkerGreyColor};
@@ -20,6 +23,9 @@ export const StyledFilterLabel = styled.div`
   font-family: ${({ theme }) => theme.font.family.Noto};
   text-align: center;
   font-size: 11px;
+  ${({ theme }) => theme.mq.tablet} {
+    display: none;
+  }
 `;
 export const StyledIcon = styled(KeyboardArrowDown)`
   height: 20px;
