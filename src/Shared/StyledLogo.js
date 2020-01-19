@@ -28,9 +28,10 @@ transition: transform 0.3s;
   ${({ theme }) => theme.mq.tablet} {
     height: 180px;
     width: 220px;
-    ${({ footer }) =>
-      footer &&
+    ${({ active }) =>
+      active &&
       `
+      transform: translate(-50%,0%);
     `}
   }
 `;

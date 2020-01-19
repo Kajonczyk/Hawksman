@@ -15,7 +15,6 @@ export const SwiperItem = styled.div`
   height: 140px;
   display: flex;
   align-items: center;
-  justify-content: center;
   color: ${({ theme }) => theme.decoratedText};
   font-size: calc(
     ${({ theme }) => theme.font.size.mobileSwiperItemDescription} * 0.9
@@ -55,6 +54,10 @@ export const SwiperNavigationNumbers = styled.li`
   }
   transition: color 0.2s, opacity 0.2s, font-size 0.1s;
   text-align: left;
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.xs};
+    margin-top: 11px;
+  }
 `;
 
 export const SwiperSlideIndicatorWrapper = styled.div`
@@ -115,6 +118,9 @@ export const SwiperItemWrapper = styled.div`
   transition: opacity 0.4s;
   margin: 0px 20px;
   text-align: justify;
+  justify-content: center;
+  width: 100%;
+  padding: 0px 40px 0px 0px;
   &:nth-child(${({ index }) => index}) {
     opacity: 1;
     margin-top: 30px;

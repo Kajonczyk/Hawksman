@@ -5,4 +5,8 @@ export const StyledWrapper = styled.div`
   background-image: url(${river});
   background-size: cover;
   background-repeat: no-repeat;
+  padding-bottom: 50px;
+  ${({ theme }) => theme.mq.tablet} {
+    padding-bottom: 100px;
+  }
 `;

@@ -45,6 +45,13 @@ export const CustomLogo = styled(StyledLogo)`
   ${({ active }) =>
     active &&
     `
-  transform: translate(-50%,-40%);
+  transform: translate(-50%,60%);
   `}
+  ${({ theme }) => theme.mq.tablet} {
+    ${({ active }) =>
+      active &&
+      `
+    transform: translate(-50%,20%);
+  `}
+  }
 `;

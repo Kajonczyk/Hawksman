@@ -66,7 +66,7 @@ export class HorizontalSlider extends Component {
                 <StyledImgWrapper>
                   <StyledImg src={item.img} alt="img" />
                   <StyledItemDescription>
-                    {item.description}
+                    {item.houseType}
                   </StyledItemDescription>
                 </StyledImgWrapper>
                 <div>
@@ -76,7 +76,9 @@ export class HorizontalSlider extends Component {
                     {item.sqFeet}
                   </StyledLocalisationText>
                   <StyledButtonWrapper>
-                    <StyledButton swiperButton>See Details</StyledButton>
+                    <StyledButton swiperButton noMargin>
+                      See Details
+                    </StyledButton>
                   </StyledButtonWrapper>
                 </div>
               </div>
