@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyledWrapper, CustomParagraph } from "./ContactSectionStyles";
 import { ContactForm } from "./ContactForm/ContactForm";
 import { StyledFeatures } from "../../../Shared/StyledFeatures";

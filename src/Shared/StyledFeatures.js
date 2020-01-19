@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { StyledButton } from "./StyledButton";
 import { StyledSectionIndicator } from "./StyledSectionIndicator";
 import { StyledDecoratedText } from "./StyledDecoratedText";
-import { StyledContent } from "./StyledContent";
 import history from "../Utils/history";
 const changeURL = url => {
   history.push(url);
@@ -41,13 +40,14 @@ export const StyledSectionDivider = styled.div`
   align-items: center;
   position: absolute;
   left: 50%;
-  bottom: -150px;
+  bottom: -200px;
   z-index: 1000;
   width: 80%;
   transform: translate(-50%, 0%);
   ${({ theme }) => theme.mq.tablet} {
     flex-direction: row;
     height: 300px;
+    bottom: -150px;
     max-width: 1024px;
   }
 `;

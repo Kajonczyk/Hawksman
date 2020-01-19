@@ -10,10 +10,7 @@ export class SecondSection extends Component {
     return (
       <StyledWrapper>
         <StyledContent>
-          <StyledHeading
-            color={({ theme }) => theme.greyColor}
-            sectionNumber="02"
-          >
+          <StyledHeading sectionNumber="02">
             How we do things <br />
             Differently
           </StyledHeading>

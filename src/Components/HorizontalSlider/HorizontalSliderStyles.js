@@ -39,12 +39,14 @@ export const StyledItemDescription = styled.div`
   background-color: white;
   width: 80%;
   font-size: calc(
-    ${({ theme }) => theme.font.size.mobileSwiperItemDescription} * 0.8
+    ${({ theme }) => theme.font.size.mobileSwiperItemDescription} * 0.9
   );
   font-family:  ${({ theme }) => theme.font.family.NotoSerif}
   position: absolute;
   text-align:right;
-  bottom: 0;
+  bottom: -1px;
+  line-height:50px;
+  padding-right:15px;
   &::after{
     content: "";
     height:1px;
@@ -54,6 +56,26 @@ export const StyledItemDescription = styled.div`
     bottom:2px;
     right: 10px;
   }
+  ${({ theme }) => theme.mq.tablet} {
+    width:52%;
+    height:90px;
+    font-size: ${({ theme }) => theme.font.size.m}
+    padding-right:25px;
+    display:flex;
+    align-items:center;
+    justify-content:flex-end;
+    line-height:normal;
+
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    width:35%;
+    height:120px;
+    font-size: ${({ theme }) => theme.font.size.m}
+    padding-right:25px;
+    
+
+
+  }
 `;
 export const StyledDecoratedText = styled.p`
   color: ${({ theme }) => theme.decoratedText};
@@ -61,18 +83,29 @@ export const StyledDecoratedText = styled.p`
     ${({ theme }) => theme.font.size.mobileSwiperItemDescription}
   );
   text-align: right;
-  padding: 15px 25% 0px 0px;
+  padding: 15px 5% 0px 0px;
   font-family: ${({ theme }) => theme.font.family.NotoSerif};
+  ${({ theme }) => theme.mq.tablet} {
+    padding-right: 10%;
+    font-size: ${({ theme }) => theme.font.size.s};
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    padding-right: 0%;
+    font-size: ${({ theme }) => theme.font.size.s};
+  }
 `;
 export const StyledLocalisationText = styled(StyledDecoratedText)`
   font-size: calc(
     ${({ theme }) => theme.font.size.mobileSwiperItemDescription} * 0.8
   );
 `;
-export const StyledSeparator = styled.p`
+export const StyledSeparator = styled.span`
   color: black;
   margin: 0px;
   display: inline-block;
+  ${({ theme }) => theme.mq.desktop} {
+    padding-right: 5px;
+  }
 `;
 export const StyledPaginationWrapper = styled.div`
   display: flex;
@@ -103,6 +136,9 @@ const setIndicatorPosition = index => {
     }
     case 4: {
       return "calc(100% / 4 + 177.75px)";
+    }
+    default: {
+      return;
     }
   }
 };
@@ -137,8 +173,12 @@ export const StyledPagination = styled.div`
   width: 200px;
 `;
 export const StyledButtonWrapper = styled.div`
+  padding-top: 30px;
   ${({ theme }) => theme.mq.tablet} {
     width: 80%;
     margin: 0px auto;
+  }
+  ${({ theme }) => theme.mq.desktop} {
+    width: 100%;
   }
 `;

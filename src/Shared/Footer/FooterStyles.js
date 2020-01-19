@@ -72,6 +72,7 @@ export const StyledDt = styled.dt`
   color: ${({ theme }) => theme.logoDescription};
   font-weight: bold;
   text-transform: uppercase;
+  font-size: ${({ theme }) => theme.font.size.footerSize};
   ${({ theme }) => theme.mq.tablet} {
     font-size: ${({ theme }) => theme.font.size.xs};
     font-weight: normal;

@@ -33,4 +33,11 @@ export const StyledButton = styled.button`
     `
       margin: 30px 0px;
     `}
+  ${({ theme }) => theme.mq.desktop} {
+    ${({ noMargin }) =>
+      noMargin &&
+      `
+      margin: 0px;
+    `}
+  }
 `;

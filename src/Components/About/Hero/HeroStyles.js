@@ -29,9 +29,7 @@ export const CustomLogo = styled(StyledLogo)`
     margin: 120px 0px 30px 0px;
   }
 `;
-export const LineBreak = styled.div`
-  height: ${({ height }) => height}px;
-`;
+
 export const CustomParagraph = styled(StyledParagraph)`
   margin: 40px 20px;
   font-size: ${({ theme }) => theme.font.size.decoratedTextSize};

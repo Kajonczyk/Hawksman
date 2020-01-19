@@ -11,6 +11,7 @@ import {
   StyledDiv,
   SwiperItem
 } from "./SectionSwiperStyles";
+import { StyledContent } from "../../../../Shared/StyledContent";
 
 export class SectionSwiper extends Component {
   state = {
@@ -38,7 +39,7 @@ export class SectionSwiper extends Component {
   }
   render() {
     return (
-      <>
+      <StyledContent>
         <SwiperWrapper className=" about-swiper-container">
           <SwiperNavigationWrapper className="swiper-pagination">
             <SwiperNavigationNumbers index={this.state.activeSlide + 1}>
@@ -103,7 +104,7 @@ export class SectionSwiper extends Component {
             </SwiperItemWrapper>
           </StyledDiv>
         </SwiperWrapper>
-      </>
+      </StyledContent>
     );
   }
 }

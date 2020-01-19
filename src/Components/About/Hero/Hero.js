@@ -2,7 +2,6 @@ import React from "react";
 import {
   StyledWrapper,
   CustomLogo,
-  LineBreak,
   CustomParagraph,
   CustomSectionIndicator
 } from "./HeroStyles";

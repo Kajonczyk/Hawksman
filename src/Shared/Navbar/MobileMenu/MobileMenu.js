@@ -19,7 +19,7 @@ export const MobileMenu = ({ isMobileMenuExpanded, toggleMenu }) => {
 
         <StyledUl>
           {menuItems.map(item => (
-            <StyledListItem>
+            <StyledListItem key={item.url}>
               {(isElementActive = isUrlExact(item))}
 
               <StyledListItemLink

@@ -14,7 +14,7 @@ export const DesktopMenu = ({ activeScroll }) => {
     <StyledContent flex spaceBetween minWidth>
       <StyledUl flex>
         {menuItems.slice(0, 3).map(item => (
-          <StyledListItem onClick={() => changeRoute(item.url)}>
+          <StyledListItem key={item.url} onClick={() => changeRoute(item.url)}>
             {(isElementActive = isUrlExact(item))}
             <StyledListItemLink
               href="#"

@@ -16,12 +16,7 @@ export const ThirdSection = () => {
   return (
     <StyledWrapper>
       <StyledContent>
-        <StyledHeading
-          color={({ theme }) => theme.greyColor}
-          sectionNumber="03"
-        >
-          How we help you
-        </StyledHeading>
+        <StyledHeading sectionNumber="03">How we help you</StyledHeading>
         <StyledDecoratedText big>
           Why should moving house be in the top 5 most stressful life
           experiences along with the death of a loved one and divorce?

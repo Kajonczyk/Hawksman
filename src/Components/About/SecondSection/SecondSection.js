@@ -13,13 +13,7 @@ export const SecondSection = () => {
   return (
     <StyledWrapper>
       <StyledContent flex column>
-        <StyledHeading
-          color={({ theme }) => theme.greyColor}
-          sectionNumber="03"
-        >
-          Who we are
-        </StyledHeading>
-        >
+        <StyledHeading sectionNumber="03">Who we are</StyledHeading>>
         <StyledListWrapper>
           <StyledDecoratedText big>
             A new kind of estate agent. You get a quality service 100% of the

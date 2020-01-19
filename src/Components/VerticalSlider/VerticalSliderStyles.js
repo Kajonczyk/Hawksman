@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { KeyboardArrowUp } from "styled-icons/material/KeyboardArrowUp";
-import { KeyboardArrowDown } from "styled-icons/material/KeyboardArrowDown";
 export const Wrapper = styled.div`
   height: 350px;
   display: flex;

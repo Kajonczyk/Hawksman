@@ -13,10 +13,7 @@ export const SixthSection = () => {
   return (
     <StyledWrapper>
       <StyledContent>
-        <StyledHeading
-          color={({ theme }) => theme.greyColor}
-          sectionNumber="06"
-        >
+        <StyledHeading sectionNumber="06">
           What we can do <br />
           For buyers
         </StyledHeading>

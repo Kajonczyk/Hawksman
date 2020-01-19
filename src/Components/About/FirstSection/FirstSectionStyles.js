@@ -73,8 +73,8 @@ export const PersonInfo = styled.p`
   color: white;
   font-size: ${({ theme }) => theme.font.size.s};
   font-family: ${({ theme }) => theme.font.family.NotoSerif};
-  ${({ role }) =>
-    role &&
+  ${({ personRole }) =>
+    personRole &&
     `
     font-size: 0.9rem;
   opacity:0.5;
