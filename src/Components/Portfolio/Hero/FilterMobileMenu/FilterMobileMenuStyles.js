@@ -25,4 +25,25 @@ export const StyledOptionLabel = styled.p`
 `;
 export const StyledParagraph = styled.p`
   cursor: pointer;
+  position: relative;
+  transition: margin 0.2s, color 0.2s;
+  &::before {
+    content: "";
+    height: 1px;
+    width: 15px;
+    position: absolute;
+    left: -12%;
+    top: 50%;
+    transform: translate(-50%, -100%);
+    background-color: transparent;
+  }
+  ${({ active, theme }) =>
+    active &&
+    `
+    color: ${theme.decoratedText};
+    margin-left:15px;
+    &::before{
+      background-color: ${theme.decoratedText}
+    }
+  `}
 `;

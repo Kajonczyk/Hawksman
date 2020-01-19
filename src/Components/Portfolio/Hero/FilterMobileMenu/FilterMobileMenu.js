@@ -7,6 +7,11 @@ import {
   StyledParagraph
 } from "./FilterMobileMenuStyles";
 import { SortContext } from "../../../../Shared/PortfolioSortContext";
+import { sortMenuItems, locationMenuItems } from "../../menuItems";
+const setActiveItem = (array, item) => {
+  array.forEach(item => (item.isActive = false));
+  item.isActive = true;
+};
 
 export const FilterMobileMenu = () => {
   return (
@@ -19,31 +24,17 @@ export const FilterMobileMenu = () => {
           <SortContext.Consumer>
             {context => (
               <>
-                <StyledParagraph
-                  onClick={() => context.setSortOption("default")}
-                >
-                  Default
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setSortOption("priceDesc")}
-                >
-                  Price: High - Low
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setSortOption("priceAsc")}
-                >
-                  Price: Low - High
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setSortOption("sizeDesc")}
-                >
-                  Size: High - Low
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setSortOption("sizeAsc")}
-                >
-                  Size: Low - High
-                </StyledParagraph>
+                {sortMenuItems.map(item => (
+                  <StyledParagraph
+                    active={item.isActive}
+                    onClick={() => {
+                      context.setSortOption(item.sortOption);
+                      setActiveItem(sortMenuItems, item);
+                    }}
+                  >
+                    {item.text}
+                  </StyledParagraph>
+                ))}
               </>
             )}
           </SortContext.Consumer>
@@ -58,24 +49,17 @@ export const FilterMobileMenu = () => {
           <SortContext.Consumer>
             {context => (
               <>
-                <StyledParagraph onClick={() => context.setPlaceOption("all")}>
-                  View All
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setPlaceOption("fetcham")}
-                >
-                  Fetcham
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setPlaceOption("esher")}
-                >
-                  Esher
-                </StyledParagraph>
-                <StyledParagraph
-                  onClick={() => context.setPlaceOption("walton-on-thames")}
-                >
-                  Walton-on-Thames
-                </StyledParagraph>
+                {locationMenuItems.map(item => (
+                  <StyledParagraph
+                    active={item.isActive}
+                    onClick={() => {
+                      context.setPlaceOption(item.filterOption);
+                      setActiveItem(locationMenuItems, item);
+                    }}
+                  >
+                    {item.text}
+                  </StyledParagraph>
+                ))}
               </>
             )}
           </SortContext.Consumer>
