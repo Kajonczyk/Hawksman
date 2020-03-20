@@ -44,7 +44,7 @@ transform: translate(-50%,20%);
     ${({ active }) =>
       active &&
       `
-    transform: translate(-50%,-20%);
+    transform: translate(-50%,20%)!important;
   `}
   }
 `;
