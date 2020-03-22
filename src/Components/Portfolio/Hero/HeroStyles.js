@@ -41,6 +41,14 @@ export const StyledIcon = styled(KeyboardArrowDown)`
     
   `}
 `;
+export const StyledDiv = styled.div`
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 export const CustomLogo = styled(StyledLogo)`
   ${({ active }) =>
     active &&

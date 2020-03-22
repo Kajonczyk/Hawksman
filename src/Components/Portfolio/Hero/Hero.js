@@ -1,38 +1,40 @@
-import React, { Component } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   StyledWrapper,
   StyledFilterLabel,
   StyledIcon,
-  CustomLogo
+  CustomLogo,
+  StyledDiv
 } from "./HeroStyles";
 import { FilterMobileMenu } from "./FilterMobileMenu/FilterMobileMenu";
 import { NavbarContext } from "../../../Shared/NavbarContext";
+import { AnimationWrapper } from "../../../Shared/AnimationWrapper";
+import { revealPage, fadeIn } from "../../../Utils/Animations/animations";
 
-export class Hero extends Component {
-  state = {
-    isFilterMenuToggled: false
-  };
-  toggleFilterMenu = () => {
-    this.setState(prevState => ({
-      isFilterMenuToggled: !prevState.isFilterMenuToggled
-    }));
-  };
+export const Hero = () => {
+  const [isMenuToggled, setToggle] = useState();
+  const animationRef = useRef(null);
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    revealPage([...animationRef.current?.children], animationRef.current);
+    fadeIn([...sectionRef.current?.children], 1);
+  }, []);
 
-  render() {
-    const { isFilterMenuToggled } = this.state;
-    return (
-      <StyledWrapper>
+  return (
+    <StyledWrapper>
+      <AnimationWrapper refProp={animationRef} />
+      <StyledDiv ref={sectionRef}>
         <NavbarContext.Consumer>
           {context => <CustomLogo active={context.state.isMenuActive} />}
         </NavbarContext.Consumer>
 
         <StyledFilterLabel>
-          <p onClick={this.toggleFilterMenu}>
-            Filter Properties <StyledIcon isActive={isFilterMenuToggled} />
+          <p onClick={() => setToggle(!isMenuToggled)}>
+            Filter Properties <StyledIcon isActive={isMenuToggled} />
           </p>
-          {isFilterMenuToggled && <FilterMobileMenu />}
+          {isMenuToggled && <FilterMobileMenu />}
         </StyledFilterLabel>
-      </StyledWrapper>
-    );
-  }
-}
+      </StyledDiv>
+    </StyledWrapper>
+  );
+};

@@ -21,7 +21,7 @@ export const StyledLogo = styled.div`
     active &&
     `
 left:50%;
-transform:translate(-50%,50%);
+transform:translate(-50%,0%)!important;
 z-index: 9999;
 transition: transform 0.3s;
 `}

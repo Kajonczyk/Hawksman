@@ -26,7 +26,7 @@ export const CustomLogo = styled(StyledLogo)`
   transform: translate(-50%, 50%);
   `}
   ${({ theme }) => theme.mq.tablet} {
-    margin: 120px 0px 30px 0px;
+    margin: 120px auto 30px auto;
   }
 `;
 
