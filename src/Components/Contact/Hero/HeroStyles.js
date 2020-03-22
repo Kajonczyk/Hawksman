@@ -18,6 +18,14 @@ export const StyledWrapper = styled.div`
     height:600px;
   }
 `;
+export const StyledDiv = styled.div`
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+`;
 export const CustomSectionIndicator = styled(StyledSectionIndicator)`
   transform: rotate(-90deg);
   z-index: 3000;
@@ -33,7 +41,7 @@ export const CustomSectionIndicator = styled(StyledSectionIndicator)`
   }
 `;
 export const CustomLogo = styled(StyledLogo)`
-  margin-bottom: -60px;
+  margin-bottom: 20px;
   margin-top: -30px;
   ${({ active }) =>
     active &&
@@ -41,9 +49,11 @@ export const CustomLogo = styled(StyledLogo)`
 transform: translate(-50%,20%);
 `}
   ${({ theme }) => theme.mq.tablet} {
+    margin-bottom: 80px;
     ${({ active }) =>
       active &&
       `
+      
     transform: translate(-50%,20%)!important;
   `}
   }

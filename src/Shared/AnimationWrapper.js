@@ -14,7 +14,7 @@ export const AnimationWrapper = ({ refProp }) => {
 export const Wrapper = styled.div`
   position: fixed;
   width: 100%;
-  height: 100%;
+  height: 102%;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -23,6 +23,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   z-index: 99999;
+  margin: 0px;
 `;
 export const AnimationDiv = styled.div`
   width: 100%;

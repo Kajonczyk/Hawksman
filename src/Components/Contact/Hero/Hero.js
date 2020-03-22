@@ -2,7 +2,8 @@ import React, { useRef, useEffect } from "react";
 import {
   StyledWrapper,
   CustomSectionIndicator,
-  CustomLogo
+  CustomLogo,
+  StyledDiv
 } from "./HeroStyles";
 import { StyledSecondHeading } from "../../../Shared/StyledSecondHeading";
 import { NavbarContext } from "../../../Shared/NavbarContext";
@@ -19,14 +20,14 @@ export const Hero = () => {
   return (
     <StyledWrapper>
       <AnimationWrapper refProp={animationRef} />
+      <StyledDiv ref={sectionRef}>
+        <NavbarContext.Consumer>
+          {context => <CustomLogo active={context.state.isMenuActive} />}
+        </NavbarContext.Consumer>
 
-      <NavbarContext.Consumer>
-        {context => <CustomLogo active={context.state.isMenuActive} />}
-      </NavbarContext.Consumer>
-      <div ref={sectionRef}>
         <StyledSecondHeading>Contact Hawksman</StyledSecondHeading>
         <CustomSectionIndicator />
-      </div>
+      </StyledDiv>
     </StyledWrapper>
   );
 };
