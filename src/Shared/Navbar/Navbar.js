@@ -4,14 +4,16 @@ import {
   StyledNavBarItem,
   StyledMenuWrapper,
   StyledHamburgerMenu,
-  StyledWrapper
+  StyledWrapper,
 } from "./NavbarStyles";
 import { MobileMenu } from "./MobileMenu/MobileMenu";
 import { DesktopMenu } from "./DesktopMenu/DesktopMenu";
 import { NavbarContext } from "../../Shared/NavbarContext";
+import { changeRoute } from "./MenuSharedItems/SharedMethods";
+import { Link } from "react-router-dom";
 export class Navbar extends Component {
   state = {
-    windowWidth: 0
+    windowWidth: 0,
   };
   componentDidMount() {
     window.addEventListener("resize", this.getWindowWidth);
@@ -20,14 +22,14 @@ export class Navbar extends Component {
   getWindowWidth = () => {
     const windowWidth = window.innerWidth;
     this.setState({
-      windowWidth
+      windowWidth,
     });
   };
   render() {
     return (
       <StyledWrapper>
         <NavbarContext.Consumer>
-          {context => (
+          {(context) => (
             <>
               <StyledNavBar activeScroll={context.state.isPageScrolled}>
                 {this.state.windowWidth > 1023 ? (
@@ -44,8 +46,21 @@ export class Navbar extends Component {
                     <StyledNavBarItem
                       active={context.state.isMenuActive}
                       activeScroll={context.state.isPageScrolled}
+                      onClick={() => {
+                        changeRoute("/contact");
+                      }}
                     >
-                      Contact
+                      <Link
+                        to="/contact"
+                        style={{
+                          color: "white",
+                          textDecoration: "none",
+                          position: "relative",
+                          zIndex: "9999",
+                        }}
+                      >
+                        Contact
+                      </Link>
                     </StyledNavBarItem>
                   </>
                 )}

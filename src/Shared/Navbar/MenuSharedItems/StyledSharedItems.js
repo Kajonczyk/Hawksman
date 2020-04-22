@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const StyledListItem = styled.li`
   padding: 20px;
   text-align: center;
+  position: relative;
   ${({ theme }) => theme.mq.desktop} {
     padding: 10px;
     z-index: 9999;
@@ -25,6 +26,14 @@ export const StyledListItemLink = styled.a`
   cursor:pointer;
 
   `}
+  ${({ contact }) =>
+    contact &&
+    `
+    position:relative;
+    z-index:9999;
+    
+  `}
+
   ${({ activeScroll, theme }) =>
     activeScroll &&
     `

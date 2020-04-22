@@ -46,7 +46,7 @@ export const CustomLogo = styled(StyledLogo)`
   ${({ active }) =>
     active &&
     `
-transform: translate(-50%,20%);
+transform: translate(-50%,-40%) !important;
 `}
   ${({ theme }) => theme.mq.tablet} {
     margin-bottom: 80px;

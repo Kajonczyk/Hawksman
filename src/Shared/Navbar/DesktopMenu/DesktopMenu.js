@@ -3,7 +3,7 @@ import { StyledContent } from "../../StyledContent";
 import {
   StyledListItemLink,
   StyledUl,
-  StyledListItem
+  StyledListItem,
 } from "../MenuSharedItems/StyledSharedItems";
 import { menuItems } from "../menuItems";
 import { changeRoute, isUrlExact } from "../MenuSharedItems/SharedMethods";
@@ -13,14 +13,15 @@ export const DesktopMenu = ({ activeScroll }) => {
   return (
     <StyledContent flex spaceBetween minWidth>
       <StyledUl flex>
-        {menuItems.slice(0, 3).map(item => (
+        {menuItems.slice(0, 3).map((item) => (
           <StyledListItem key={item.url} onClick={() => changeRoute(item.url)}>
             {(isElementActive = isUrlExact(item))}
             <StyledListItemLink
               href="#"
               active={isElementActive}
-              desktop
               activeScroll={activeScroll}
+              desktop
+              contact
             >
               {item.description}
             </StyledListItemLink>

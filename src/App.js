@@ -7,14 +7,14 @@ import { GlobalStyle } from "./Utils/GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./Utils/theme";
 import NavbarProvider from "./Shared/NavbarContext";
-import { Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import history from "./Utils/history";
 function App() {
   return (
     <div>
       <ThemeProvider theme={theme}>
         <NavbarProvider>
-          <Router history={history}>
+          <Router history={history} basename="/hawksman">
             <Switch>
               <Route path="/" exact component={HomePage} />
               <Route path="/about" exact component={AboutPage} />

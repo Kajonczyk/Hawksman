@@ -4,7 +4,9 @@ import { StyledButton } from "./StyledButton";
 import { StyledSectionIndicator } from "./StyledSectionIndicator";
 import { StyledDecoratedText } from "./StyledDecoratedText";
 import history from "../Utils/history";
-const changeURL = url => {
+import { Link } from "react-router-dom";
+
+const changeURL = (url) => {
   history.push(url);
 };
 export const StyledFeatures = () => {
@@ -15,7 +17,12 @@ export const StyledFeatures = () => {
           See all of our handpicked <br /> properties
         </StyledDecoratedText>
         <StyledDecoratedButton onClick={() => changeURL("/portfolio")}>
-          View Portfolio
+          <Link
+            to="/portfolio"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            View Portfolio
+          </Link>
         </StyledDecoratedButton>
       </StyledDividerWrapper>
       <StyledSectionIndicator features />
@@ -24,7 +31,12 @@ export const StyledFeatures = () => {
           Interested in putting your <br /> property for sale?
         </StyledDecoratedText>
         <StyledDecoratedButton onClick={() => changeURL("/contact")}>
-          Contact us
+          <Link
+            to="/contact"
+            style={{ color: "inherit", textDecoration: "none" }}
+          >
+            Contact us
+          </Link>
         </StyledDecoratedButton>
       </StyledDividerWrapper>
     </StyledSectionDivider>
