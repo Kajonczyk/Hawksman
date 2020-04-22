@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "829af100b090a3dcb2d23b9294d154c5",
+    "revision": "6b4e7c7f528f3b34457ea02406334c2a",
     "url": "/Hawksman/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Hawksman/static/js/2.848afa26.chunk.js"
   },
   {
-    "revision": "2ef706d351df572abb54",
-    "url": "/Hawksman/static/js/main.586a8b00.chunk.js"
+    "revision": "425c53a24148d17ca471",
+    "url": "/Hawksman/static/js/main.096de577.chunk.js"
   },
   {
     "revision": "9d41a374830fdc7028f5",
